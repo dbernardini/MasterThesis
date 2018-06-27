@@ -1,0 +1,126 @@
+@inproceedings{sutherland1968head,
+  title={A head-mounted three dimensional display},
+  author={Sutherland, Ivan E},
+  booktitle={Proceedings of the December 9-11, 1968, fall joint computer conference, part I},
+  pages={757--764},
+  year={1968},
+  organization={ACM}
+}
+
+@misc{hypecycle,
+    author = "{Kasey Panetta}",
+    title = "Top Trends in the Gartner Hype Cycle for Emerging Technologies, 2017",
+    year = "2017",
+   howpublished = "\url{https://www.gartner.com/smarterwithgartner/top-trends-in-the-gartner-hype-cycle-for-emerging-technologies-2017/}",
+    note = "[Online; accessed 26-June-2018]"
+  }
+  
+@misc{hypecycledef,
+    author = "{Gartner}",
+    title = "Hype Cycle",
+    year = "2017",
+    howpublished = "\url{https://www.gartner.com/it-glossary/hype-cycle}",
+    note = "[Online; accessed 26-June-2018]"
+  }
+  
+@article{slater2003note,
+  title={A note on presence terminology},
+  author={Slater, Mel},
+  journal={Presence connect},
+  volume={3},
+  number={3},
+  pages={1--5},
+  year={2003},
+  publisher={Emerald Group Publishing Limited}
+}
+
+@article{bowman2007virtual,
+  title={Virtual reality: how much immersion is enough?},
+  author={Bowman, Doug A and McMahan, Ryan P},
+  journal={Computer},
+  volume={40},
+  number={7},
+  year={2007},
+  publisher={IEEE}
+}
+
+@article{sanchez2005presence,
+  title={From presence to consciousness through virtual reality},
+  author={Sanchez-Vives, Maria V and Slater, Mel},
+  journal={Nature Reviews Neuroscience},
+  volume={6},
+  number={4},
+  pages={332},
+  year={2005},
+  publisher={Nature Publishing Group}
+}
+
+@inproceedings{casanueva2001effects,
+  title={The effects of avatars on co-presence in a collaborative virtual environment},
+  author={Casanueva, Juan S and Blake, Edwin H},
+  booktitle={Annual Conference of the South African Institute of Computer Scientists and Information Technologists (SAICSIT2001). Pretoria, South Africa},
+  year={2001}
+}
+
+@article{tromp1998small,
+  title={Small group behaviour experiments in the coven project},
+  author={Tromp, Jolanda and Bullock, Adrian and Steed, Anthony and Sadagic, Amela and Slater, Mel and Fr{\'e}con, Emmanuel},
+  journal={IEEE Computer Graphics and Applications},
+  volume={18},
+  number={6},
+  pages={53--63},
+  year={1998},
+  publisher={IEEE}
+}
+
+@article{slater2000small,
+  title={Small-group behavior in a virtual and real environment: A comparative study},
+  author={Slater, Mel and Sadagic, Amela and Usoh, Martin and Schroeder, Ralph},
+  journal={Presence: Teleoperators \& Virtual Environments},
+  volume={9},
+  number={1},
+  pages={37--51},
+  year={2000},
+  publisher={MIT Press}
+}
+
+@article{kennedy1993simulator,
+  title={Simulator sickness questionnaire: An enhanced method for quantifying simulator sickness},
+  author={Kennedy, Robert S and Lane, Norman E and Berbaum, Kevin S and Lilienthal, Michael G},
+  journal={The international journal of aviation psychology},
+  volume={3},
+  number={3},
+  pages={203--220},
+  year={1993},
+  publisher={Taylor \& Francis}
+}
+
+@article{riccio1991ecological,
+  title={An ecological theory of motion sickness and postural instability},
+  author={Riccio, Gary E and Stoffregen, Thomas A},
+  journal={Ecological psychology},
+  volume={3},
+  number={3},
+  pages={195--240},
+  year={1991},
+  publisher={Taylor \& Francis}
+}
+
+@article{selcon1990evaluation,
+  title={Evaluation of the Situational Awareness Rating Technique(SART) as a tool for aircrew systems design},
+  author={Selcon, SJ and Taylor, RM},
+  journal={AGARD, Situational Awareness in Aerospace Operations 8 p(SEE N 90-28972 23-53)},
+  year={1990}
+}
+
+@incollection{hart1988development,
+  title={Development of NASA-TLX (Task Load Index): Results of empirical and theoretical research},
+  author={Hart, Sandra G and Staveland, Lowell E},
+  booktitle={Advances in psychology},
+  volume={52},
+  pages={139--183},
+  year={1988},
+  publisher={Elsevier}
+}
+
+

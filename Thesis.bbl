@@ -1,0 +1,71 @@
+\begin{thebibliography}{10}
+
+\bibitem{sutherland1968head}
+I.~E. Sutherland, ``A head-mounted three dimensional display,'' in {\em
+  Proceedings of the December 9-11, 1968, fall joint computer conference, part
+  I}, pp.~757--764, ACM, 1968.
+
+\bibitem{hypecycle}
+{Kasey Panetta}, ``Top trends in the gartner hype cycle for emerging
+  technologies, 2017.''
+  \url{https://www.gartner.com/smarterwithgartner/top-trends-in-the-gartner-hype-cycle-for-emerging-technologies-2017/},
+  2017.
+\newblock [Online; accessed 26-June-2018].
+
+\bibitem{hypecycledef}
+{Gartner}, ``Hype cycle.''
+  \url{https://www.gartner.com/it-glossary/hype-cycle}, 2017.
+\newblock [Online; accessed 26-June-2018].
+
+\bibitem{slater2003note}
+M.~Slater, ``A note on presence terminology,'' {\em Presence connect}, vol.~3,
+  no.~3, pp.~1--5, 2003.
+
+\bibitem{bowman2007virtual}
+D.~A. Bowman and R.~P. McMahan, ``Virtual reality: how much immersion is
+  enough?,'' {\em Computer}, vol.~40, no.~7, 2007.
+
+\bibitem{sanchez2005presence}
+M.~V. Sanchez-Vives and M.~Slater, ``From presence to consciousness through
+  virtual reality,'' {\em Nature Reviews Neuroscience}, vol.~6, no.~4, p.~332,
+  2005.
+
+\bibitem{casanueva2001effects}
+J.~S. Casanueva and E.~H. Blake, ``The effects of avatars on co-presence in a
+  collaborative virtual environment,'' in {\em Annual Conference of the South
+  African Institute of Computer Scientists and Information Technologists
+  (SAICSIT2001). Pretoria, South Africa}, 2001.
+
+\bibitem{tromp1998small}
+J.~Tromp, A.~Bullock, A.~Steed, A.~Sadagic, M.~Slater, and E.~Fr{\'e}con,
+  ``Small group behaviour experiments in the coven project,'' {\em IEEE
+  Computer Graphics and Applications}, vol.~18, no.~6, pp.~53--63, 1998.
+
+\bibitem{slater2000small}
+M.~Slater, A.~Sadagic, M.~Usoh, and R.~Schroeder, ``Small-group behavior in a
+  virtual and real environment: A comparative study,'' {\em Presence:
+  Teleoperators \& Virtual Environments}, vol.~9, no.~1, pp.~37--51, 2000.
+
+\bibitem{kennedy1993simulator}
+R.~S. Kennedy, N.~E. Lane, K.~S. Berbaum, and M.~G. Lilienthal, ``Simulator
+  sickness questionnaire: An enhanced method for quantifying simulator
+  sickness,'' {\em The international journal of aviation psychology}, vol.~3,
+  no.~3, pp.~203--220, 1993.
+
+\bibitem{riccio1991ecological}
+G.~E. Riccio and T.~A. Stoffregen, ``An ecological theory of motion sickness
+  and postural instability,'' {\em Ecological psychology}, vol.~3, no.~3,
+  pp.~195--240, 1991.
+
+\bibitem{selcon1990evaluation}
+S.~Selcon and R.~Taylor, ``Evaluation of the situational awareness rating
+  technique(sart) as a tool for aircrew systems design,'' {\em AGARD,
+  Situational Awareness in Aerospace Operations 8 p(SEE N 90-28972 23-53)},
+  1990.
+
+\bibitem{hart1988development}
+S.~G. Hart and L.~E. Staveland, ``Development of nasa-tlx (task load index):
+  Results of empirical and theoretical research,'' in {\em Advances in
+  psychology}, vol.~52, pp.~139--183, Elsevier, 1988.
+
+\end{thebibliography}

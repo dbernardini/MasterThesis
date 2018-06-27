@@ -1,0 +1,211 @@
+	% !TeX encoding = UTF-8
+% !TeX program = pdflatex
+\documentclass[binding=0.6cm,LaM]{sapthesis}
+\usepackage[utf8]{inputenx}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Thesis},pdfauthor={Danilo Bernardini}}
+\title{Design, development and evaluation of a framework for recording and synchronizing experiences in VR with physiological signals}
+\author{Danilo Bernardini}
+\IDnumber{1544247}
+\course{Engineering in Computer Science}
+\courseorganizer{Facoltà di Ingegneria dell'informazione, informatica e statistica}
+\AcademicYear{2017/2018}
+\copyyear{2018}
+\advisor{Prof. Massimo Mecella}
+%\coadvisor{Prof. Maurizio Caon}
+\authoremail{danilo.bernardini93@gmail.com}
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+\mainmatter
+\chapter{Introduction}
+...
+\chapter{Technologies}
+
+This chapter introduces the involved technologies - virtual reality and physiological sensors -  and presents the current state of the art about them, including the available devices on the market and some application examples.
+
+\section{Virtual Reality}
+Virtual Reality (VR) is a technology that aims to allow a user to experience a computer-generated simulated environment. It commonly consists of a visual experience, but it can also include audio, haptic, touch and other feedback devices. 
+
+Visual devices are usually VR headsets, head-mounted displays (HMD) with two screens - one per eye - that immerse the user in a virtual world simulating the real one. While wearing the headset, the user can look around rotating his head, move in the environment or interact with virtual objects using controllers, and perceive other senses through ad-hoc devices.
+
+The above systems are usually computer-based, i.e. they are physically connected to the computer, so the applications run here and the visual output is transmitted to the headset display.
+Another kind of solution is the one that uses the smartphone: in this case the headset is just a case that holds the device, the whole computation takes place in the smartphone and thus the applications are much simpler and less realistic compared to the computer-based ones (see \ref{sec:vrheadsets}).
+	
+\subsection{VR spread}
+Virtual reality idea is not something new, there have been basic examples of it since the 1960s. The first head-mounted display system was the \textit{Sword of Damocles} \cite{sutherland1968head} created in 1968 by computer scientist Ivan Sutherland and his student Bob Sproull: the graphics were very primitive and consisted only of wireframe rooms, but the device was able to change the showed perspective according to the user head position. Its name comes from its appearance: the whole system was too heavy to be worn by a person so it was attached to the ceiling, suspended on the user's head.
+
+In the next years different VR systems were developed, most of the times for the videogames industry. Examples can be found in some \textit{SEGA} and \textit{Nintendo} products. 
+
+The main reason why VR is exploded in the last few years is that technology is now powerful enough to support advanced computation and to give users really immersive experiences. Until a few years ago VR solutions could not satisfy \textit{immersion} requirements (see section \ref{sec:measures}): graphics were not good enough and they had low refresh rates, causing the user some sickness (see section \ref{sec:measures}).
+
+Conversely, in the present days we can rely on powerful machines and tools that allow us to create and experience good simulations of the world, most of the times without perceiving any issue.
+
+VR spread is also encouraged by the release of not very expensive headsets (see section \ref{sec:vrheadsets}): a lot of people can now buy VR systems, either for development or entertainment, but also companies are starting to use them for business (see next section).
+
+We can refer to \textit{Gartner Hype Cycle for Emerging Technologies} of 2017 \cite{hypecycle} to understand VR position in the market. Gartner is an American research and advisory company that provides IT-related insights and market analysis. The Hype Cycle is "a graphical depiction of a common pattern that arises with each new technology or other innovation" \cite{hypecycledef}, i.e. a chart that shows the maturity and social application of a technology. The plot is divided in five phases representing the stages of a technology life cycle: Innovation Trigger, Peak of Inflated Expectations, Trough of Disillusionment, Slope of Enlightenment, Plateau of Productivity. 
+Gartner releases it every year and in 2017 they stated that transparently immersive experiences are one of the 3 most trending topics, together with AI everywhere and digital platforms, and that VR is currently in the fourth phase of the cycle. This means that VR applications are starting to be understood and adopted by companies, that methodologies and best practices are being developed and that the technology is beginning to spread to the potential audience.
+
+
+\subsection{Applications}
+Virtual Reality has many applications in different fields, from gaming and entertainment to education and healthcare. Here are some examples of industries that are using VR for improving and enhancing their work.
+
+\begin{description}
+
+\item[Business:] Companies can make clients experience virtual tours of business environments; they can test and show new products before releasing them or train their employees using VR.
+
+\item[Culture and education:] VR can be used in museums and historical settings to recreate ancient sites, monuments, cities; it can be
+very useful for teaching, since students can be immersed in what they are studying and better understand things (e.g. history, geography, astronomy).
+
+\item[Games and entertainment:] Gaming and entertaining industry is probably the biggest adopter of VR, since this brings the player in a whole new level of immersion and realism; VR is also used in movies, sport and arts.
+
+\item[Healthcare:] VR allows to simulate a human body, so that students and doctors can study and train on it; it can simulate a surgery or perform a robotic one, i.e. control a robotic arm remotely; it can be used to treat phobias and diseases.
+
+\item[Military:] VR can be used to perform a combat simulation where soldiers can train and learn battlefield tactics; it can be also useful for flight simulation or medical training on the battlefield.  
+
+\item[Science and engineering:] Virtual reality technology can help scientists to visualize and interact with complex structures, or it can be used by engineers to design, model and see something in 3D. 
+
+\end{description}
+
+
+\subsection{Measures}
+\label{sec:measures}
+The previous sections mentioned the words \textit{immersion}, \textit{realism}, \textit{sickness}, etc. These are concepts we can analyze and measure during VR experiences. 
+
+\subsubsection{Immersion and presence}
+There is a lot of confusion about the concepts of immersion and presence; some people think they are the same thing, some others mix them up. According to Mel Slater, immersion concerns \textit{what the technology delivers from an objective point of view. The more that a system delivers displays (in all sensory modalities) and tracking that preserves fidelity in relation to their equivalent real-world sensory modalities, the more that it is 'immersive'} \cite{slater2003note}. 
+This means that immersion is something that can be determined and somehow measured in an objective way, depending entirely on the technology and not on the user. 
+Presence, on the contrary, is a user-dependent concept, something that varies depending on the person, a human reaction to immersion: each person can perceive a different level of presence inside the same system and even a single user can perceive a different level of presence using the same system in different times, depending on the user's emotional state, past history, etc. \cite{bowman2007virtual}.
+We can say that presence is both immersion and involvement: this regards the state of focus and attention of the user and depends on the interaction with the virtual world, the storyline, and other similar features of the experience.
+
+\paragraph{Measuring immersion}
+Since immersion is an objective concept depending only on technology, we can measure it evaluating how close the system video, audio and other features are to the real world \cite{bowman2007virtual}. For example if we consider visual source, we can identify some parameters that influence it: 
+\begin{itemize}
+\item field of view and field of regard, respectively the size of the visual field that can be viewed instantaneously and the total size of the visual field surrounding the user;
+\item display size and resolution;
+\item stereoscopy and head-based rendering, given by head tracking;
+\item frame rate and refresh rate.
+\end{itemize}
+
+\paragraph{Measuring presence}
+Presence is a subjective measure and is not easy to quantify. During the years some techniques have been developed and tested, the most used ones are the following \cite{sanchez2005presence}:
+
+\begin{description}
+
+\item [Questionnaires]
+Users participate to the virtual experience and then answer a questionnaire about presence. The questions imply responses between two extremes (e.g. from "no presence" to "complete presence"). The problem with this approach is that asking questions about presence can affect the actual perception of the participant.
+
+\item [Behavioral]
+We can see evidence of presence if users in the virtual world behave as if they were in the real world. This can be triggered by events that cause a physical reaction on the participant, such as a movement reflex or a body rotation.
+
+\item [Physiological signals]
+This is a specialization of the previous approach: if we know how a person physiologically reacts to an event, and we can find the same reaction during a virtual event, then this is a sign of presence. This technique can only be used when we have well-known and easy to measure reactions, for example fear, so it is not ideal for calm and "boring" scenarios where nothing happens.
+
+\item [Breaks in presence (BIP)]
+A break in presence is an event that occurs when the user becomes aware he is in a virtual environment. This can happen if the visual stimuli starts to lag, if the graphics become low-quality, if the user touches a physical object from outside the VR experience, etc. This approach allows to know presence by analyzing the moments when BIP occur, and it is a good alternative to the physiological one because it can be used in every kind of environment (calm, stressfull,scary, and so on).
+
+\end{description}
+
+\subsubsection{Co-presence}
+When more than one participant share the same virtual environment we can measure co-presence (also known as shared presence). It is the feeling that the other participants are really present and that the user is interacting with real people \cite{casanueva2001effects}. As well as presence, also co-presence is measured with questionnaires. It is not proven that co-presence is related to presence, because some studies \cite{tromp1998small, slater2000small} seem to find correlation between them and others \cite{casanueva2001effects} do not.
+
+\subsubsection{VR sickness}
+As anticipated, virtual reality can cause some sort of sickness to the user. The common symptoms are similar to motion sickness symptoms: general discomfort, nausea, sweating, headache, disorientation, fatigue.
+Sickness varies from person to person and it is usually caused by conflicts between perceived movement and actual movement: if the player walks in VR the eyes say he is walking while the ears do not detect any movement, creating confusion to the brain. Other aspects that can induce sickness are low refresh rate and poor animations: both these things have the same effect on brain, which processes frames at higher rates or expects better animations.
+
+Since it is a subjective feeling, the most common way of measuring VR sickness is through questionnaires. The standard methodology for measuring sickness is the \textit{Simulator Sickness Questionnaire (SSQ)} by Kennedy, Lane, Berbaum and Lilienthal \cite{kennedy1993simulator}. 
+An interesting alternative approach is to monitor the postural activity of the participant \cite{riccio1991ecological}: it seems that motion sickness is related to postural stability and that there are differences in postural activity between people who are experiencing sickness and people who are not.
+
+\subsubsection{Situation awareness}
+A general measure that applies also for VR is situation awareness. It consists in having the awareness of what is happening in the surrounding environment and what may happen in the future, being ready to handle the situation that will arise. A famous approach to measure it is the \textit{Situational Awareness Rating Technique (SART)} \cite{selcon1990evaluation} originally developed by Taylor and Selcon in 1990 for evaluating pilots. It is a post-trial questionnaire that asks the user to rate 10 dimensions with a number from 1 to 7.
+
+\subsubsection{Workload}
+Another measure that can be useful in VR is workload, meant as the effort needed to complete a task. The most used technique is the
+\textit{NASA Task Load Index (NASA-TLX)} \cite{hart1988development}, a questionnaire divided in two parts: the first one consists of 6 rating subscales, the second one is a personal weighting of these subscales.
+
+
+\subsection{VR headsets}
+\label{sec:vrheadsets}	
+This section presents the most important available VR devices, starting from the computer-connected (tethered) headsets and continuing with mobile ones. Finally, standalone VR devices are introduced. 
+
+\subsubsection{Tethered VR headsets}
+Computer-connected VR systems take advantage of the computing power of the machine they are connected to, so they can give the user complex environments and experiences. The headsets provide head tracking and motion tracking - generally through external base stations - so the user can move with 6 degrees of freedom and can interact with the virtual world in a lot of possible ways. 
+
+\begin{description}
+
+\item[HTC Vive]
+HTC Vive system consists of a headset, two controllers and two base stations to track body movements. The display has 90 Hz refresh rate and 110 degree field of view, with a resolution of 1080x1200 per eye. The base stations also track the controllers, allowing an advanced interaction with the virtual environment. Together with several sensors, the headset also includes a front-facing camera. In 2018 HTC launched the Pro version of the Vive, fitted with a higher-resolution display, attachable headphones and a second camera.
+
+\item[Oculus Rift]
+Oculus initiated a Kickstarter campaign in 2012 and in 2014 it was acquired by Facebook. The system includes two Touch controllers and the headset hardware is basically the same as the HTC Vive's one. Tracking is obtained with \textit{Constellation}, an optical-based tracking system that detects IR LED markers on the HMD and controllers.
+
+\item[Sony PlayStation VR]
+PlayStation VR is Sony's proprietary VR system only compatible with PlayStation 4. It supports only PS4 ad-hoc games but there is the possibility to play any other PS4 game like if it was on a very large screen. Headset display has a resolution of 960x1080 per eye, a 100 degrees field of view and a native refresh rate of 90 or 120 Hz. Regarding the controller input, the system supports both regular \textit{DualShock 4} or \textit{PlayStation Move} controllers. Players need a \textit{PlayStation Camera} to track the HMD and the Move controllers.
+
+\end{description}
+
+\subsubsection{Mobile VR headsets}
+
+A mobile VR system consists of a case that holds the smartphone and two lens that separate the display in two parts, one per eye. Since the only available sensors are those included in the smartphone, these VR systems can not track body movements and therefore they can just count on 3 degrees of freedom (head rotation). Since they are generally simpler and less powerful than the tethered ones, mobile VR systems are usually quite cheaper.
+
+\begin{description}
+
+\item[Google Daydream View]
+Daydream is the enhanced successor of the \textit{Google Cardboard}, a very basic cardboard-made headset with two lenses that turns the smartphone into a VR system. Daydream software is built into the Android operating system since the Nougat version. The package comes with a wireless touchpad controller that can be tracked with on-board sensors.
+
+\item[Samsung Gear VR]
+Gear VR is a system only compatible with some high-level Samsung devices, it contains a controller equipped with a touchpad and a motion sensor. The development was carried out by Samsung in collaboration with Oculus, which took care of the software distribution. 
+
+\end{description}
+
+\subsubsection{Standalone VR headsets}
+Standalone headsets are a new type of VR systems that does not require a computer or a smartphone in order to work. Since they have almost the same technical specifications, these devices computing power can be compared to that of smartphones, even if they are optimized for VR applications.
+
+\begin{description}
+
+\item[Oculus Go]
+This device was developed by Oculus in collaboration with Qualcomm and Xiaomi. The HMD has 3 degree of freedom and is equipped with a 5.5-inch display with a resolution of 1280x1440 per eye, a Snapdragon 821 processor and comes with a 32GB or 64GB storage. The system also includes a wireless controller. 
+
+\item[Lenovo Mirage Solo]
+Mirage Solo is a brand new device and it works with Google Daydream platform. Its display is similar to the Oculus Go's one but it is powered by a  and  it has a better tracking system compared to Oculus Go
+
+\end{description}
+
+\newpage	
+\section{Physiological signals}
+...
+\section{Usability}
+...
+
+
+\chapter{Requirements}
+...
+	
+	
+\chapter{Design and realization}
+...
+
+
+\chapter{Validation}
+\section{Test 1}
+...
+\subsection{Protocol}
+...
+\subsection{Results}
+...
+\section{Test 2}
+...
+\subsection{Protocol}
+...
+\subsection{Results}
+...
+\chapter{Conclusions}
+...
+\backmatter
+\cleardoublepage
+\phantomsection % Give this command only if hyperref is loaded
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliographystyle{ieeetr}
+\bibliography{bibliography}
+\end{document}
