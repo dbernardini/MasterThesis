@@ -130,7 +130,7 @@ Another measure that can be useful in VR is workload, meant as the effort needed
 This section presents the most important available VR devices, starting from the computer-connected (tethered) headsets and continuing with mobile ones. Finally, standalone VR devices are introduced. 
 
 \subsubsection{Tethered VR headsets}
-Computer-connected VR systems take advantage of the computing power of the machine they are connected to, so they can give the user complex environments and experiences. The headsets provide head tracking and motion tracking - generally through external base stations - so the user can move with 6 degrees of freedom and can interact with the virtual world in a lot of possible ways. 
+Computer-connected VR systems take advantage of the computing power of the machine they are connected to, so they can give the user complex environments and experiences. The headsets provide head tracking and motion tracking - generally through external base stations - so the user can move with 6 degrees of freedom (DOF) and can interact with the virtual world in a lot of possible ways. 
 
 \begin{description}
 
@@ -147,7 +147,7 @@ PlayStation VR is Sony's proprietary VR system only compatible with PlayStation 
 
 \subsubsection{Mobile VR headsets}
 
-A mobile VR system consists of a case that holds the smartphone and two lens that separate the display in two parts, one per eye. Since the only available sensors are those included in the smartphone, these VR systems can not track body movements and therefore they can just count on 3 degrees of freedom (head rotation). Since they are generally simpler and less powerful than the tethered ones, mobile VR systems are usually quite cheaper.
+A mobile VR system consists of a case that holds the smartphone and two lens that separate the display in two parts, one per eye. Since the only available sensors are those included in the smartphone, these VR systems can not track body movements and therefore they can just count on 3 DOF (head rotation). Since they are generally simpler and less powerful than the tethered ones, mobile VR systems are usually quite cheaper.
 
 \begin{description}
 
@@ -168,13 +168,152 @@ Standalone headsets are a new type of VR systems that does not require a compute
 This device was developed by Oculus in collaboration with Qualcomm and Xiaomi. The HMD has 3 degree of freedom and is equipped with a 5.5-inch display with a resolution of 1280x1440 per eye, a Snapdragon 821 processor and comes with a 32GB or 64GB storage. The system also includes a wireless controller. 
 
 \item[Lenovo Mirage Solo]
-Mirage Solo is a brand new device and it works with Google Daydream platform. Its display is similar to the Oculus Go's one but it is powered by a  and  it has a better tracking system compared to Oculus Go
+Mirage Solo is a brand new device and it works with Google Daydream platform. Technically speaking, its display is similar to the Oculus Go's one but the device is powered by a Snapdragon 835 with a 4GB RAM and it has a better tracking system, that gives the headset 6 DOF (but only 3 for the controller).
 
 \end{description}
 
-\newpage	
-\section{Physiological signals}
+
+\subsection{Tracking devices}	
+Together with headsets, a lot of different sensors and devices can be used to enhance VR experience. The most significant improvement in interaction is probably tracking. Most HMDs have an integrated head tracking system that allows 6 DOF movement, and controllers are usually tracked making it possible to interact with the environment. However, there exist external systems that enable advanced tracking functionalities such as full body tracking, hand tracking or eye tracking.
+
+\subsubsection{Body tracking}
+Body tracking makes possible to follow movements of the whole body, included arms and legs. It is a technique often used in movies and videogames to animate digital characters in CGI (in this case it is known as \textit{motion capture}). 
+
+\begin{description}
+
+\item[HoloSuit]
+It is a suit that allows full body motion tracking and capturing thanks to the many sensors it has embedded. It also provides haptic feedback and it is compatible with the most important operating systems and development environments (\textit{Unity}, \textit{Unreal Engine}).
+
+\item[HTC Vive Trackers]
+Trackers are small disc-shaped devices that work with HTC Vive and they can be attached to any real physical object in order to track its movements. They can be also connected to the user to obtain body tracking or to replace Vive controllers.
+
+\item[Optitrack]
+Optitrack is one of the largest motion capture companies in the world, providing powerful tools and devices able to track small markers from long distances.
+
+\item[Perception Neurons]
+This system is composed of small units called Neurons that are placed to the various parts of the body, for example to fully track a person 11 to 32 Neurons are required. It is compatible with most 3D modeling and animation programs.
+
+\item[PrioVR]
+PrioVR uses sensors attached to key points of the body to provide full tracking without the need of a camera. It comes with small controllers and it works with both Unity and Unreal Engine.
+
+\item[Orbbec]
+Orbbec produces long-rage depth cameras that can be used with the proprietary body tracking SDK to fully detect the human body. It works with Windows, Linux and Android.
+
+\item[Senso Suit]
+Senso Suit is a kit composed of 15 modules, each containing a sensor and a vibrating motor, that make it possible to achieve full body tracking.  SDK available for Unity, Unreal Engine, C++ and Android. 
+
+\item[VicoVR]
+VicoVR is a wireless device that provides full body tracking to mobile VR headsets without the need of body-attached sensors. The device look is similar to \textit{Microsoft Kinect} (discontinued) and is compatible with Android, iOS and the main mobile VR headsets.
+
+\item[Xsens]
+Another big name in tracking industry, Xsens provides a variety of solutions for full body tracking, including suits or strap-based sensors kits. 
+
+\end{description}
+
+\subsubsection{Hand tracking}
+Hand tracking is a complex aspect of artificial intelligence that allows to detect and track hand movements only with a camera, without the need of any controller or external device. There are several companies working on this topic, here follows a list of some of the most valuable products currently available.
+
+\begin{description}
+
+\item[LeapMotion]
 ...
+
+\item[MindLeap]
+...
+
+\item[Microsoft Handpose]
+...
+
+\item[Myo Armband]
+...
+
+\item[Nimble Sense]
+...
+
+\item[uSens Fingo]
+...
+
+\end{description}
+
+\subsubsection{Eye tracking}
+Eye tracking is the process of detecting eye position and gaze. It is usually implemented with lights and cameras that analyze eye movement and detect the direction of gaze. Eye tracking is used in a lot of different fields such as safety (for example in a car), advertising, marketing and psychology.
+
+
+\begin{description}
+
+\item[aGlass]
+...
+
+\item[Fove]
+...
+
+\item[Pupil]
+...
+
+\item[Tobii]
+...
+
+\end{description}
+
+\section{Physiological signals}
+Physiological parameters are vital signals that describe a person's functions and activities state. There exist many different physiological signals, measurable with a lot of different sensors and devices. This section presents a wide variety of physiological sensors, from cheap wearable devices to expensive professional kits.
+
+\subsection{Wearable devices}
+
+\begin{description}
+
+\item[Empatica E4 Wristband]
+...
+
+\item[EQ02 LifeMonitor]
+...
+
+\item[Helo LX]
+...
+
+\item[Microsoft Band 2]
+...
+
+\item[Polar H7]
+...
+
+\item[Xiaomi Mi Band 2]
+...
+
+\item[Zephyr BioModule]
+...
+
+\end{description}
+
+\subsection{Professional kits}
+
+\begin{description}
+
+\item[Bitalino]
+...
+
+\item[Biopack Systems]
+...
+
+\item[BiosignalsPlux]
+...
+
+\item[Libelium MySignals]
+...
+
+\item[MindMedia NeXus-4]
+...
+
+\item[Smartex Wearable Wellness System]
+...
+
+\item[Thought Technology Biofeedback System]
+...
+
+\end{description}
+
+
+\newpage
 \section{Usability}
 ...
 
@@ -183,7 +322,16 @@ Mirage Solo is a brand new device and it works with Google Daydream platform. It
 ...
 	
 	
-\chapter{Design and realization}
+\chapter{Design}
+\section{Similar systems}
+...
+\section{Design}
+...
+
+\chapter{Realization}
+\section{Code snippets}
+...
+\section{Third parties software}
 ...
 
 

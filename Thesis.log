@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.24)  27 JUN 2018 19:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.24)  28 JUN 2018 16:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -977,7 +977,7 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 20.
 (c:/texlive/2017/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<sapienza-MLred-pos.pdf, id=84, pagebox=cropbox, 288.07625pt x 89.33376pt>
+<sapienza-MLred-pos.pdf, id=116, pagebox=cropbox, 288.07625pt x 89.33376pt>
 File: sapienza-MLred-pos.pdf Graphic file (type pdf)
 <use sapienza-MLred-pos.pdf>
 Package pdftex.def Info: sapienza-MLred-pos.pdf  used on input line 20. on inpu
@@ -1063,23 +1063,27 @@ Overfull \hbox (2.62277pt too wide) in paragraph at lines 155--156
 0.95 Google Card-
  []
 
-[8] [9] [10
-
-]
+[8] [9] [10] [11] [12]
 Chapter 3.
-[11] [12
+[13
+
+] [14
 
 ]
 Chapter 4.
-[13] [14
-
-]
-Chapter 5.
 [15] [16
 
 ]
-Chapter 6.
+Chapter 5.
 [17] [18
+
+]
+Chapter 6.
+[19] [20
+
+]
+Chapter 7.
+[21] [22
 
 ] (./Thesis.bbl
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 11.
@@ -1109,25 +1113,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--19
  www . gartner . com / it-[]glossary /
  []
 
-[19
+[23
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 211.
- [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 211.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 359.
+ [24]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 359.
  (./Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 211.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 211.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 359.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 359.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 33A2C7D6B61E99E564BD647CB48767F6;1130.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
+(rerunfilecheck)             Checksum: 7984C9BB9E0212B85E35DCCB02495809;1616.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 359.
  ) 
 Here is how much of TeX's memory you used:
- 9110 strings out of 492985
- 133922 string characters out of 6136283
+ 9133 strings out of 492985
+ 134201 string characters out of 6136283
  224986 words of memory out of 5000000
- 12449 multiletter control sequences out of 15000+600000
+ 12457 multiletter control sequences out of 15000+600000
  76369 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,12n,94p,708b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1139,10 +1143,10 @@ texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2017/texmf-dist/fonts/typ
 e1/public/lm/lmri10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/lmss1
 0.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/
 2017/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Thesis.pdf (24 pages, 243016 bytes).
+Output written on Thesis.pdf (28 pages, 253093 bytes).
 PDF statistics:
- 316 PDF objects out of 1000 (max. 8388607)
- 277 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 381 PDF objects out of 1000 (max. 8388607)
+ 337 compressed objects within 4 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 230 words of extra memory for PDF output out of 10000 (max. 10000000)
 
