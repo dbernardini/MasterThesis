@@ -19,7 +19,7 @@
 \contentsline {subsubsection}{Body tracking}{9}{section*.12}
 \contentsline {subsubsection}{Hand tracking}{10}{section*.13}
 \contentsline {subsubsection}{Eye tracking}{10}{section*.14}
-\contentsline {section}{\numberline {2.2}Physiological signals}{10}{section.2.2}
+\contentsline {section}{\numberline {2.2}Physiological signals}{11}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Wearable devices}{11}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Professional kits}{11}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}Usability}{12}{section.2.3}
