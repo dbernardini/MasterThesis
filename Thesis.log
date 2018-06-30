@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.24)  28 JUN 2018 17:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.24)  30 JUN 2018 13:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1063,7 +1063,13 @@ Overfull \hbox (2.62277pt too wide) in paragraph at lines 155--156
 0.95 Google Card-
  []
 
-[8] [9] [10] [11] [12]
+[8] [9] [10]
+Overfull \hbox (2.20065pt too wide) in paragraph at lines 292--293
+[]\T1/lmr/m/n/10.95 Hardware and soft-ware plat-form that pro-vides pro-fes-sio
+nal mea-
+ []
+
+[11] [12]
 Chapter 3.
 [13
 
@@ -1117,15 +1123,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--19
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 349.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 366.
  [24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 349.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 366.
  (./Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 349.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 349.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 366.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 366.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 7984C9BB9E0212B85E35DCCB02495809;1616.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 349.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 366.
  ) 
 Here is how much of TeX's memory you used:
  9133 strings out of 492985
@@ -1143,7 +1149,7 @@ texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2017/texmf-dist/fonts/typ
 e1/public/lm/lmri10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/lmss1
 0.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/
 2017/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Thesis.pdf (28 pages, 253908 bytes).
+Output written on Thesis.pdf (28 pages, 255673 bytes).
 PDF statistics:
  381 PDF objects out of 1000 (max. 8388607)
  337 compressed objects within 4 object streams
