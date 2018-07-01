@@ -46,6 +46,11 @@ M.~Slater, A.~Sadagic, M.~Usoh, and R.~Schroeder, ``Small-group behavior in a
   virtual and real environment: A comparative study,'' {\em Presence:
   Teleoperators \& Virtual Environments}, vol.~9, no.~1, pp.~37--51, 2000.
 
+\bibitem{cobb1999virtual}
+S.~V. Cobb, S.~Nichols, A.~Ramsey, and J.~R. Wilson, ``Virtual reality-induced
+  symptoms and effects (vrise),'' {\em Presence: Teleoperators \& Virtual
+  Environments}, vol.~8, no.~2, pp.~169--186, 1999.
+
 \bibitem{kennedy1993simulator}
 R.~S. Kennedy, N.~E. Lane, K.~S. Berbaum, and M.~G. Lilienthal, ``Simulator
   sickness questionnaire: An enhanced method for quantifying simulator
@@ -67,5 +72,34 @@ S.~Selcon and R.~Taylor, ``Evaluation of the situational awareness rating
 S.~G. Hart and L.~E. Staveland, ``Development of nasa-tlx (task load index):
   Results of empirical and theoretical research,'' in {\em Advances in
   psychology}, vol.~52, pp.~139--183, Elsevier, 1988.
+
+\bibitem{wiederhold1998fear}
+B.~K. Wiederhold, R.~Gevirtz, and M.~D. Wiederhold, ``Fear of flying: A case
+  report using virtual reality therapy with physiological monitoring,'' {\em
+  CyberPsychology \& Behavior}, vol.~1, no.~2, pp.~97--103, 1998.
+
+\bibitem{kuriakose2015understanding}
+S.~Kuriakose and U.~Lahiri, ``Understanding the psycho-physiological
+  implications of interaction with a virtual reality-based system in
+  adolescents with autism: a feasibility study,'' {\em IEEE Transactions on
+  Neural Systems and Rehabilitation Engineering}, vol.~23, no.~4, pp.~665--675,
+  2015.
+
+\bibitem{seinfeld2016influence}
+S.~Seinfeld, I.~Bergstrom, A.~Pomes, J.~Arroyo-Palacios, F.~Vico, M.~Slater,
+  and M.~V. Sanchez-Vives, ``Influence of music on anxiety induced by fear of
+  heights in virtual reality,'' {\em Frontiers in psychology}, vol.~6, p.~1969,
+  2016.
+
+\bibitem{llobera2013relationship}
+J.~Llobera, M.~V. Sanchez-Vives, and M.~Slater, ``The relationship between
+  virtual body ownership and temperature sensitivity,'' {\em Journal of the
+  Royal Society Interface}, vol.~10, no.~85, p.~20130300, 2013.
+
+\bibitem{wiederhold2014clinical}
+M.~D. Wiederhold, K.~Gao, and B.~K. Wiederhold, ``Clinical use of virtual
+  reality distraction system to reduce anxiety and pain in dental procedures,''
+  {\em Cyberpsychology, Behavior, and Social Networking}, vol.~17, no.~6,
+  pp.~359--365, 2014.
 
 \end{thebibliography}

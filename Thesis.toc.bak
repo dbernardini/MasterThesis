@@ -24,7 +24,7 @@
 \contentsline {subsection}{\numberline {2.2.2}Professional kits}{11}{subsection.2.2.2}
 \contentsline {chapter}{\numberline {3}Project concept}{13}{chapter.3}
 \contentsline {section}{\numberline {3.1}VR and physiological signals}{13}{section.3.1}
-\contentsline {section}{\numberline {3.2}Idea and requirements}{14}{section.3.2}
+\contentsline {section}{\numberline {3.2}Project idea and requirements}{14}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Use cases}{14}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Requirements}{16}{subsection.3.2.2}
 \contentsline {chapter}{\numberline {4}Design}{17}{chapter.4}
@@ -40,10 +40,10 @@
 \contentsline {section}{\numberline {5.1}Code snippets}{19}{section.5.1}
 \contentsline {section}{\numberline {5.2}Third parties software}{19}{section.5.2}
 \contentsline {chapter}{\numberline {6}Validation}{21}{chapter.6}
-\contentsline {section}{\numberline {6.1}Proof of concept test}{21}{section.6.1}
+\contentsline {section}{\numberline {6.1}Test 1}{21}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Protocol}{21}{subsection.6.1.1}
 \contentsline {subsection}{\numberline {6.1.2}Results}{21}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Usability test}{21}{section.6.2}
+\contentsline {section}{\numberline {6.2}Test 2}{21}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Protocol}{21}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}Results}{21}{subsection.6.2.2}
 \contentsline {chapter}{\numberline {7}Conclusions}{23}{chapter.7}

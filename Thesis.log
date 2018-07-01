@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.24)  30 JUN 2018 13:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.24)  1 JUL 2018 23:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -977,7 +977,7 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 20.
 (c:/texlive/2017/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<sapienza-MLred-pos.pdf, id=116, pagebox=cropbox, 288.07625pt x 89.33376pt>
+<sapienza-MLred-pos.pdf, id=152, pagebox=cropbox, 288.07625pt x 89.33376pt>
 File: sapienza-MLred-pos.pdf Graphic file (type pdf)
 <use sapienza-MLred-pos.pdf>
 Package pdftex.def Info: sapienza-MLred-pos.pdf  used on input line 20. on inpu
@@ -1040,18 +1040,17 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 3.
-)
-\tf@toc=\write4
-\openout4 = `Thesis.toc'.
-
  [3
 
 
-] [4
+])
+\tf@toc=\write4
+\openout4 = `Thesis.toc'.
 
-]
+ [4]
 Chapter 1.
 [1
+
 
 ] [2
 
@@ -1073,23 +1072,36 @@ nal mea-
 Chapter 3.
 [13
 
-] [14
+] [14]
+<images/use_case_diagram_3.png, id=344, 1577.895pt x 1694.33pt>
+File: images/use_case_diagram_3.png Graphic file (type png)
+<use images/use_case_diagram_3.png>
+Package pdftex.def Info: images/use_case_diagram_3.png  used on input line 363.
+ on input line 363.
+Package pdftex.def Info: Requested size: 405.52399pt x 435.44815pt on input lin
+e 363.
 
-]
+Overfull \hbox (9.52399pt too wide) in paragraph at lines 363--364
+ [][] 
+ []
+
+[15 <./images/use_case_diagram_3.png>] [16]
 Chapter 4.
-[15] [16
+[17
+
+] [18
 
 ]
 Chapter 5.
-[17] [18
-
-]
-Chapter 6.
 [19] [20
 
 ]
-Chapter 7.
+Chapter 6.
 [21] [22
+
+]
+Chapter 7.
+[23] [24
 
 ] (./Thesis.bbl
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 11.
@@ -1119,28 +1131,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--19
  www . gartner . com / it-[]glossary /
  []
 
-[23
+[25
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 366.
- [24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 366.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 438.
+ [26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 438.
  (./Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 366.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 366.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 438.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 438.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 7984C9BB9E0212B85E35DCCB02495809;1616.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 366.
+(rerunfilecheck)             Checksum: 64FD283EB00628EE92C7A1F69B0E2D81;2279.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 438.
  ) 
 Here is how much of TeX's memory you used:
- 9133 strings out of 492985
- 134201 string characters out of 6136283
- 224986 words of memory out of 5000000
- 12457 multiletter control sequences out of 15000+600000
+ 9182 strings out of 492985
+ 135080 string characters out of 6136283
+ 226249 words of memory out of 5000000
+ 12479 multiletter control sequences out of 15000+600000
  76369 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,12n,94p,708b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,94p,1069b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2017/tex
 mf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2017/texmf-dist/fonts/type1/p
 ublic/lm/lmbx10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx12.pf
@@ -1149,10 +1161,10 @@ texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2017/texmf-dist/fonts/typ
 e1/public/lm/lmri10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/lmss1
 0.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/
 2017/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Thesis.pdf (28 pages, 255673 bytes).
+Output written on Thesis.pdf (30 pages, 365768 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 337 compressed objects within 4 object streams
- 85 named destinations out of 1000 (max. 500000)
- 230 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 464 PDF objects out of 1000 (max. 8388607)
+ 415 compressed objects within 5 object streams
+ 109 named destinations out of 1000 (max. 500000)
+ 307 words of extra memory for PDF output out of 10000 (max. 10000000)
 

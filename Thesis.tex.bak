@@ -20,7 +20,7 @@
 \tableofcontents
 \mainmatter
 \chapter{Introduction}
-...
+
 \chapter{Technologies}
 
 This chapter introduces the involved technologies - virtual reality and physiological sensors -  and presents the current state of the art about them, including the available devices on the market and some application examples.
@@ -111,7 +111,7 @@ A break in presence is an event that occurs when the user becomes aware he is in
 When more than one participant share the same virtual environment we can measure co-presence (also known as shared presence). It is the feeling that the other participants are really present and that the user is interacting with real people \cite{casanueva2001effects}. As well as presence, also co-presence is measured with questionnaires. It is not proven that co-presence is related to presence, because some studies \cite{tromp1998small, slater2000small} seem to find correlation between them and others \cite{casanueva2001effects} do not.
 
 \subsubsection{VR sickness}
-As anticipated, virtual reality can cause some sort of sickness to the user. The common symptoms are similar to motion sickness symptoms: general discomfort, nausea, sweating, headache, disorientation, fatigue.
+As anticipated, virtual reality can cause some sort of sickness to the user. The common symptoms are similar to motion sickness symptoms: general discomfort, nausea, sweating, headache, disorientation, fatigue \cite{cobb1999virtual}.
 Sickness varies from person to person and it is usually caused by conflicts between perceived movement and actual movement: if the player walks in VR the eyes say he is walking while the ears do not detect any movement, creating confusion to the brain. Other aspects that can induce sickness are low refresh rate and poor animations: both these things have the same effect on brain, which processes frames at higher rates or expects better animations.
 
 Since it is a subjective feeling, the most common way of measuring VR sickness is through questionnaires. The standard methodology for measuring sickness is the \textit{Simulator Sickness Questionnaire (SSQ)} by Kennedy, Lane, Berbaum and Lilienthal \cite{kennedy1993simulator}. 
@@ -307,12 +307,98 @@ Wireless acquisition system that supports 8 different signals, it includes a sof
 
 
 
-\section{Usability}
-...
+%\section{Usability}
 
 
-\chapter{Requirements}
-This chapter is about the 
+
+\chapter{Project concept}
+This chapter introduces the project idea and the concepts behind it, starting from the use of VR combined with physiological signals and going towards use cases and project requirements.
+
+\section{VR and physiological signals}
+Virtual reality is a powerful tool not only for commercial use, but also for research. Since the beginning of its lifetime, in fact, people started to think that it could have been a good environment to test and study certain phenomenons, especially concerning human body and behavior. From the first VR basic prototypes to the advanced systems of these last years, researchers have conducted lost of experiments about people reactions and emotions with VR making use of physiological signals. The reason why virtual reality is so appropriate and useful for research is that it can simulate real situations, so it gives researchers countless opportunities: they can recreate real world environments, test new kinds of interaction, make people relive specific scenes, and so on. 
+
+As mentioned above, for many years there have been many examples of studies about VR with the use of physiological signals. An early research paper dealing with this subject was the one about fear of flying written by Wiederhold and others and published in 1998 \cite{wiederhold1998fear}. The authors wanted to test if there are significant physiological differences between people who are afraid of flying and people who are not. In order to accomplish that, they studied the body responses of two groups of people, one suffering from a fear of flying and the other one not, while experiencing a virtual reality flight. They measured heart rate, peripheral skin temperature, respiration rate, sweat gland activity and brain wave activity. The results of the experiment were successful and they could conclude that there exist significant differences between these two groups of people. In addition, the authors also succeeded in reducing arousal of people with fear of flying making them experience the simulation for several times. 
+
+The following year another research paper about VR and physiological signals was published by Cobb and others \cite{cobb1999virtual}. This was one of the first investigations about VR sickness (see \ref{sec:measures}): the authors examined effects and symptoms of virtual reality on people using several methodologies, including physiological parameters.
+
+These examples are part of the several research studies conducted to analyze or treat specific phobias and diseases. More recent ones are, for example, those by Kuriakose and Lahiri \cite{kuriakose2015understanding} and by Seinfeld and others \cite{seinfeld2016influence}, published in 2015 and 2016, respectively. Both are about anxiety: the former aims at measuring anxiety level in adolescents with autism using physiological signals while being in VR, the latter examines the influence of music on anxiety induced by fear of heights in VR. 
+
+Finally, we can include in this list a paper about the hand illusion in VR with temperature monitoring by Llobera and others \cite{llobera2013relationship} and one about reduction of pain and anxiety in dental procedures using VR distractions \cite{wiederhold2014clinical}.
+
+\section{Idea and requirements}
+There are many experiments and studies using virtual reality that also include physiological signals; the previous section presented some of them showing that VR applications are limitless and that using physiology with it can lead to important results.
+There is a common aspect in all these kind of studies: if the researchers want to collect physiological data during a virtual reality experience, they need to set up everything. This means to find a way to follow the experiment, to see what the participant sees in VR, to store data and to be able to analyze it. All these things are possible only if the collected data - VR video, physiological signals and other available sources - are synchronized. This process implies a lot of effort from the researchers because they have to figure out how to design and realize it, wasting time they could invest in the actual research.
+
+This leads to the basic motivation behind this thesis project: designing and implementing a framework for recording and synchronizing experiences in VR with physiological signals. The framework would be a useful tool for whoever wants to physiologically analyze a certain phenomenon in VR. Having a ready-to-use test environment would allow to save time and focus on the actual experiment, since the only required thing is to build the virtual scene and everything else is done by the framework.
+
+\subsection{Use cases}
+The project requirements come from use cases. We can imagine three cases that should cover the main phases of a research on the above topic. 
+
+\begin{enumerate}
+
+\item examiner wants to see in real-time what the participant sees;
+
+\item examiner wants to record the experiment session;
+
+\item examiner wants to replay the session.
+
+\end{enumerate}
+
+Let's analyze these points one by one in order to fully understand what the system should do.
+
+\begin{enumerate}
+
+\item Since the framework is designed for conducting VR researches with physiological signals, who conducts the experiment should be able to see what the participant sees in the virtual world in real-time and how the body reacts to the experience.
+
+\item In addition to real-time monitoring, the examiner should be able to record the whole session including all the signals and streams he has. Once recorded, everything should be synchronized in order to be easily accessible and analyzable in the future.
+
+\item The examiner should have the possibility to offline replay a previously recorded session, being able to see everything as it was during the real-time monitoring. In this replay mode there should be the possibility to find key moments in which some relevant event happened and to place a marker on it for a quick and easy analysis.
+
+\end{enumerate}
+
+The figure shows the UML Use Case Diagram representing what stated above. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.257]{images/use_case_diagram_3}
+\caption{Use Case Diagram}
+\end{figure}
+
+It is composed of two actors, the examiner and the participant, and three main use cases, reflecting the list above. The \textit{See in real-time} one is straightforward and is performed by both actors. The \textit{Record session} one is performed by both actors too, but it includes a sub-case: every time a session is recorded, it is also synchronized. \textit{Replay session} case instead is executed by the examiner alone at a later stage and it is extended by the \textit{Insert marker}, which is not mandatory.
+
+\subsection{Requirements}
+This section is about the requirements for the project, which result from the above use cases and from some other considerations. 
+
+The system should allow to monitor a virtual reality experience while some sensors collect the participant's physiological signals. It would be reasonable to include in the system a camera that films the participant during the experience. This would make it possible to also have an external view on the user, being able to monitor his physical reactions to events. Examiners can see if the participant moves, rotates his body, is not stable, or has any other kind of reaction in response to a virtual stimulus.
+
+Moreover, system structure and usability should not be hard, considering that the potential users will not be engineers or computer science experts. These people, in fact, will reasonably be scientist, doctors or researchers that need to test and analyze something in VR. 
+
+The system should allow to to start a new real-time monitoring session which shows what the participant sees in VR, the camera source filming him and his physiological signals. During this "live" session, the examiner should be able to start a new recording: this will store the streams from VR, camera and sensors. At the end of the experiment the examiner should stop the recording and the various data need to be automatically synchronized. Alongside with the real-time mode, the system should have an "offline" part that allows to replay a previously recorded session. This mode should provide classical playback controls such as play, pause and stop, as well as timeline navigation to quickly skip to a specific frame. Since everything is already synchronized, in this modality the examiner can easily track every moment of the experiment; if there are relevant events it is worth to emphasize, the system should allow to place markers on them. 
+Finally, the stored files (VR video, camera video and sensors data) should remain independent from each other, i.e. they should still be accessible from external programs after the synchronization and markers insertion.
+
+
+
+
+
+\chapter{Design}
+
+\section{Similar systems}
+
+\subsection{Design}
+
+\subsection{Physiological sensors}
+
+\subsection{Connectivity and libraries}
+
+\subsection{Events and triggers}
+
+\subsection{Synchronization}
+
+\subsection{Extensions}
+
+
+
+\section{Design}
 
 
 %\begin{figure}
@@ -321,42 +407,28 @@ This chapter is about the
 %\caption{General initial schema}
 %\end{figure}
 
-
-
-
-
-
-
-	
-	
-\chapter{Design}
-\section{Similar systems}
-...
-\section{Design}
-...
-
 \chapter{Realization}
 \section{Code snippets}
-...
+
 \section{Third parties software}
-...
+
 
 
 \chapter{Validation}
-\section{Test 1}
-...
+\section{Proof of concept test}
+
 \subsection{Protocol}
-...
+
 \subsection{Results}
-...
-\section{Test 2}
-...
+
+\section{Usability test}
+
 \subsection{Protocol}
-...
+
 \subsection{Results}
-...
+
 \chapter{Conclusions}
-...
+
 \backmatter
 \cleardoublepage
 \phantomsection % Give this command only if hyperref is loaded
