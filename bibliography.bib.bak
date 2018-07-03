@@ -186,3 +186,103 @@
   year={2014},
   publisher={Mary Ann Liebert, Inc. 140 Huguenot Street, 3rd Floor New Rochelle, NY 10801 USA}
 }
+
+@inproceedings{munoz2016physiovr,
+  title={PhysioVR: A novel mobile virtual reality framework for physiological computing},
+  author={Mu{\~n}oz, John Edison and Paulino, Teresa and Vasanth, Harry and Baras, Karolina},
+  booktitle={e-Health Networking, Applications and Services (Healthcom), 2016 IEEE 18th International Conference on},
+  pages={1--6},
+  year={2016},
+  organization={IEEE}
+}
+
+@inproceedings{cassani2015mules,
+  title={MuLES: An open source EEG acquisition and streaming server for quick and simple prototyping and recording},
+  author={Cassani, Raymundo and Banville, Hubert and Falk, Tiago H},
+  booktitle={Proceedings of the 20th International Conference on Intelligent User Interfaces Companion},
+  pages={9--12},
+  year={2015},
+  organization={ACM}
+}
+
+@inproceedings{rank2015physsigtk,
+  title={PhysSigTK: Enabling engagement experiments with physiological signals for game design},
+  author={Rank, Stefan and Lu, Cathy},
+  booktitle={Affective Computing and Intelligent Interaction (ACII), 2015 International Conference on},
+  pages={968--969},
+  year={2015},
+  organization={IEEE}
+}
+
+@inproceedings{vourvopoulos2013rehabnet,
+  title={RehabNet: A distributed architecture for motor and cognitive neuro-rehabilitation},
+  author={Vourvopoulos, Athanasios and Faria, Ana Lucia and Cameirao, Monica S and i Badia, Sergi Bermudez},
+  booktitle={e-Health Networking, Applications \& Services (Healthcom), 2013 IEEE 15th International Conference on},
+  pages={454--459},
+  year={2013},
+  organization={IEEE}
+}
+
+@inproceedings{baldassini2017customization,
+  title={Customization of domestic environment and physical training supported by virtual reality and semantic technologies: A use-case},
+  author={Baldassini, Davide and Colombo, Vera and Spoladore, Daniele and Sacco, Marco and Arlati, Sara},
+  booktitle={Research and Technologies for Society and Industry (RTSI), 2017 IEEE 3rd International Forum on},
+  pages={1--6},
+  year={2017},
+  organization={IEEE}
+}
+
+@inproceedings{cepisca2015platform,
+  title={Platform for bio-monitoring of vital parameters in critical infrastructures operation},
+  author={Cepisca, Costin and Adochiei, Felix Constantin and Potlog, Sabina and Banica, Cosmin Karl and Seritan, George Calin},
+  booktitle={Electronics, Computers and Artificial Intelligence (ECAI), 2015 7th International Conference on},
+  pages={E--7},
+  year={2015},
+  organization={IEEE}
+}
+
+@inproceedings{mcgregor2017integrating,
+  title={Integrating Big Data analytics, virtual reality, and ARAIG to support resilience assessment and development in tactical training},
+  author={McGregor, Carolyn and Bonnis, Brendan and Stanfield, Brodie and Stanfield, Michael},
+  booktitle={Serious Games and Applications for Health (SeGAH), 2017 IEEE 5th International Conference on},
+  pages={1--7},
+  year={2017},
+  organization={IEEE}
+}
+
+@article{bekele2017design,
+  title={Design of a Virtual Reality System for Affect Analysis in Facial Expressions (VR-SAAFE); Application to Schizophrenia},
+  author={Bekele, E and Bian, D and Peterman, J and Park, S and Sarkar, N},
+  journal={IEEE Transactions on Neural Systems and Rehabilitation Engineering},
+  volume={25},
+  number={6},
+  pages={739--749},
+  year={2017},
+  publisher={IEEE}
+}
+
+@inproceedings{otsuka2017physiological,
+  title={Physiological measurements on a gaming virtual reality headset using photoplethysmography: A preliminary attempt at incorporating physiological measurement with gaming},
+  author={Otsuka, Seiya and Kurosaki, Kanami and Ogawa, Mitsuhiro},
+  booktitle={Region 10 Conference, TENCON 2017-2017 IEEE},
+  pages={1251--1256},
+  year={2017},
+  organization={IEEE}
+}
+
+@article{kb2017gaze,
+  title={Gaze-sensitive Virtual Reality based Social Communication Platform for Individuals with Autism},
+  author={KB, Pradeep Raj and Oza, Poojan and Lahiri, Uttama},
+  journal={IEEE Transactions on Affective Computing},
+  year={2017},
+  publisher={IEEE}
+}
+
+@inproceedings{piumsomboon2017empathic,
+  title={Empathic Mixed Reality: Sharing What You Feel and Interacting with What You See},
+  author={Piumsomboon, Thammathip and Lee, Youngho and Lee, Gun A and Dey, Arindam and Billinghurst, Mark},
+  booktitle={Ubiquitous Virtual Reality (ISUVR), 2017 International Symposium on},
+  pages={38--41},
+  year={2017},
+  organization={IEEE}
+}

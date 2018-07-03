@@ -332,39 +332,121 @@ There is a common aspect in all these kind of studies: if the researchers want t
 This leads to the basic motivation behind this thesis project: designing and implementing a framework for recording and synchronizing experiences in VR with physiological signals. The framework would be a useful tool for whoever wants to physiologically analyze a certain phenomenon in VR. Having a ready-to-use test environment would allow to save time and focus on the actual experiment, since the only required thing is to build the virtual scene and everything else is done by the framework.
 
 \subsection{Use cases}
-The project requirements come from use cases. We can imagine three cases that should cover the main phases of a research on the above topic. 
+The project requirements come from use cases. We can imagine two main cases that cover the two different parts of the application usage:
 
 \begin{enumerate}
 
-\item examiner wants to see in real-time what the participant sees;
+\item examiner wants to see in real-time and to record what the participant sees and how the body behaves;
 
-\item examiner wants to record the experiment session;
-
-\item examiner wants to replay the session.
+\item examiner wants to replay a previously recorded session.
 
 \end{enumerate}
 
-Let's analyze these points one by one in order to fully understand what the system should do.
+Let us analyze these points one by one in order to fully understand what the system should do. After a brief description, for each use case is presented a diagram followed by the list of steps required to arrive to the goal, including the extensions.
 
 \begin{enumerate}
 
-\item Since the framework is designed for conducting VR researches with physiological signals, who conducts the experiment should be able to see what the participant sees in the virtual world in real-time and how the body reacts to the experience.
+\item Since the framework is designed for conducting VR researches with physiological signals, who conducts the experiment should be able to see what the participant sees in the virtual world in real-time and how the body reacts to the experience. 
+In addition to this, the examiner should be able to record the whole session including all the signals and streams he has. This leads to an extension of the case, named \textit{Record session}, which can be executed only after the examiner is able to see everything correctly.
+Once recorded, everything can be synchronized in order to be easily accessible and analyzable in the future. This brings the \textit{Record session} case to be extend in turn. 
 
-\item In addition to real-time monitoring, the examiner should be able to record the whole session including all the signals and streams he has. Once recorded, everything should be synchronized in order to be easily accessible and analyzable in the future.
-
-\item The examiner should have the possibility to offline replay a previously recorded session, being able to see everything as it was during the real-time monitoring. In this replay mode there should be the possibility to find key moments in which some relevant event happened and to place a marker on it for a quick and easy analysis.
-
-\end{enumerate}
-
-The figure shows the UML Use Case Diagram representing what stated above. 
+The use case description assumes that the participant is ready, with all the physiological sensors attached to his body and the VR headset correctly placed.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=.257]{images/use_case_diagram_3}
-\caption{Use Case Diagram}
+\includegraphics[scale=.24]{images/use_case_1}
+\caption{\textit{Real-time monitor} case diagram}
 \end{figure}
 
-It is composed of two actors, the examiner and the participant, and three main use cases, reflecting the list above. The \textit{See in real-time} one is straightforward and is performed by both actors. The \textit{Record session} one is performed by both actors too, but it includes a sub-case: every time a session is recorded, it is also synchronized. \textit{Replay session} case instead is executed by the examiner alone at a later stage and it is extended by the \textit{Insert marker}, which is not mandatory.
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{| l | l |}
+  \hline			
+  Name & Real-time monitor \\
+  \hline
+  Initiator & Examiner \\
+  \hline
+  Goal & Monitor the session in real-time \\
+  \hline  
+\end{tabular}
+
+\vspace{.5cm}
+
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{ l }
+\textbf{Main success scenario} \\
+1. Examiner runs the application\\
+2. Examiner sets up the sensors in the application \\
+3. Application displays sensors, VR and camera streams \\
+4. Examiner sees everything in real-time \\
+
+\vspace{0.1cm}\\
+
+\textbf{Extensions} \\
+4. Examiner wants to record the session\\
+\quad a. Examiner starts a new recording \\
+\quad b. VR, camera and sensors streams are stored \\
+\quad c. Examiner stops the recording \\
+
+4c. Examiner wants to synchronize the session\\
+\quad a. Examiner starts the synchronization \\
+\quad b. Synchronization completes \\
+
+\end{tabular}
+
+\end{center}
+
+\item The examiner should have the possibility to offline replay a previously recorded session, being able to see everything as it was during the real-time monitoring. In this replay mode there should be the possibility to find key moments in which some relevant event happened. Since the session sources are synchronized, this task should be easy. The examiner should be able to tag these events placing markers on them: these would allow a simple navigation on the session and would also be very useful for analysis.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.257]{images/use_case_2}
+\caption{\textit{Record session} case diagram}
+\end{figure}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{| l | l |}
+  \hline			
+  Name & Replay session \\
+  \hline
+  Initiator & Examiner \\
+  \hline
+  Goal & Replay a prerecorded session \\
+  \hline  
+\end{tabular}
+
+\vspace{.5cm}
+
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{ l }
+\textbf{Main success scenario} \\
+1. Examiner runs the application\\
+2. Examiner selects the "replay" mode\\
+3. Examiner opens one of the directories containing a previous recorded session \\
+4. Examiner plays the session \\
+
+\vspace{0.1cm}\\
+
+\textbf{Extensions} \\
+4. Examiner wants to insert one or more marker\\
+\quad a. Examiner finds the moments he wants to mark \\
+\quad b. Examiner inserts the marker and assigns it a label \\
+\end{tabular}
+
+\end{center}
+
+
+\end{enumerate}
+
+The whole UML Use Case Diagram is represented in figure 3.3. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.257]{images/use_case}
+\caption{Global Use Case Diagram}
+\end{figure}
+
 
 \subsection{Requirements}
 This section is about the requirements for the project, which result from the above use cases and from some other considerations. 
@@ -377,14 +459,37 @@ The system should allow to to start a new real-time monitoring session which sho
 Finally, the stored files (VR video, camera video and sensors data) should remain independent from each other, i.e. they should still be accessible from external programs after the synchronization and markers insertion.
 
 
-
-
-
 \chapter{Design}
+This chapter describes the design of the system, starting from the initial idea and continuing with the multiple steps until the final scheme.
 
 \section{Similar systems}
+Before thinking about the design itself, a research on similar projects was conducted in order to better understand how this kind of systems are realized. The list includes not only projects that are close to this one as a whole, but also projects that provide just some similar features. Here follows the research result, divided in the various fields regarding the functionalities of the system. 
+
+\begin{description}
+
+\item [PhysioVR] \cite{munoz2016physiovr} is a framework developed to integrate physiological signals in mobile VR applications. Signals are acquired using wearable devices connected to the smartphone via Bluetooth and include heart rate, electroencephalography (EEG) and electromyography (EMG). The system allows to record data and to communicate with the VR content allowing an external event triggering using a real-time control.
+
+\item [MuLES] \cite{cassani2015mules} is a tool for acquiring EEG signals and stream them that aims at facilitate the development of brain-computer interface programs. The system allows to replay a session and there are clients developed for use on different platforms and in various programming languages.
+
+\item [PhysSigTK] \cite{rank2015physsigtk} is a toolkit for accessing low-cost physiological signals hardware from Unity. It aims at helping developers to exploit engagement in their effective games. 
+
+\item [Rehabnet] \cite{vourvopoulos2013rehabnet} is a system that helps patients rehabilitation through serious videogames that monitor physiological parameters. It supports a large variety of external physiological sensors. 
+
+\item [Bicycle4CaRe] \cite{baldassini2017customization} is a tool for domestic physical training that uses VR and sensors to monitor user's activity. It simulates a home environment and collects data both from it and from the user, providing real-time feedback.
+
+\item [Cube] \cite{cepisca2015platform} is a VR simulation platform for the supervision of personnel working in critical infrastructures. It collects physiological data during the virtual experience to identify the optimal physiological profile of personnel for using it in real scenarios.
+
+\item [Athena] \cite{mcgregor2017integrating} is an analytics platform that acquires data from a combat simulator, combining this data with physiological signals of the player, and sends him body feedback.
+
+\item [VAST] \cite{kuriakose2015understanding} is a virtual reality system for social communication that also collects physiological signals to determine the user's anxiety level.
+
+\end{description}
+
+
 
 \subsection{Design}
+
+
 
 \subsection{Physiological sensors}
 
