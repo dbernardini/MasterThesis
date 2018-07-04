@@ -469,11 +469,11 @@ Before thinking about the design itself, a research on similar projects was cond
 
 \item [PhysioVR] \cite{munoz2016physiovr} is a framework developed to integrate physiological signals in mobile VR applications. Signals are acquired using wearable devices connected to the smartphone via Bluetooth and include heart rate, electroencephalography (EEG) and electromyography (EMG). The system allows to record data and to communicate with the VR content allowing an external event triggering using a real-time control.
 
-\item [MuLES] \cite{cassani2015mules} is a tool for acquiring EEG signals and stream them that aims at facilitate the development of brain-computer interface programs. The system allows to replay a session and there are clients developed for use on different platforms and in various programming languages.
+\item [MuLES] \cite{cassani2015mules} is a tool for acquiring and streaming EEG signals that aims at facilitate the development of brain-computer interface programs. The system allows to replay a session and there are clients developed for use on different platforms and in various programming languages.
 
 \item [PhysSigTK] \cite{rank2015physsigtk} is a toolkit for accessing low-cost physiological signals hardware from Unity. It aims at helping developers to exploit engagement in their effective games. 
 
-\item [Rehabnet] \cite{vourvopoulos2013rehabnet} is a system that helps patients rehabilitation through serious videogames that monitor physiological parameters. It supports a large variety of external physiological sensors. 
+\item [RehabNet] \cite{vourvopoulos2013rehabnet} is a system that helps patients rehabilitation through serious videogames that monitor physiological parameters. It supports a large variety of external physiological sensors. 
 
 \item [Bicycle4CaRe] \cite{baldassini2017customization} is a tool for domestic physical training that uses VR and sensors to monitor user's activity. It simulates a home environment and collects data both from it and from the user, providing real-time feedback.
 
@@ -483,34 +483,143 @@ Before thinking about the design itself, a research on similar projects was cond
 
 \item [VAST] \cite{kuriakose2015understanding} is a virtual reality system for social communication that also collects physiological signals to determine the user's anxiety level.
 
+\item [VR-SAAFE] \cite{bekele2017design} is a VR-based system developed for understanding facial emotions in subjects suffering of schizophrenia. The system uses an eye tracker and physiological signals to monitor user's eye gaze and emotions.
+
 \end{description}
 
-
-
 \subsection{Design}
+The above systems use different approaches for what concerns design. 
 
+\begin{itemize}
 
+\item \textit{PhysioVR} is composed of two layers: the first one deals with synchronizing the devices and streaming the data, the second one is a Unity package that receives and analyzes data and physiological signals. There are also other two modules for external control and data recording.
+
+\item \textit{MuLES} acts as the server part of a client-server architecture. It handles the communication between the several EEG sensors and transmits their data to the client applications. The devices are connected with their own drivers and the connection with the clients is realized through TCP/IP.
+
+\item \textit{RehabNet} architecture is based on three building blocks: an hardware layer that deals with devices connection, a control panel that filters and cleans data, and a web interface for accessing the rehabilitation tools. The whole system is organized as a client-server application.
+
+\item \textit{Bicycle4CaRe} is composed of different biofeedback devices connected to the PC via an Arduino board,ca desktop application and a VR simulated environment. The app contains the main functionalities and allows to control the experience.
+
+\item \textit{Athena} is consists of a data acquisition layer that collects the signals from the sensors and the game data from the combat simulator. This layer sends data to IBM's Infosphere Streams, that processes it and generates analytics for storage.
+
+\item \textit{VAST} is divided in three modules. The first one presents the tasks, the second one adapts and changes tasks according to the users behavior and the last one is the data acquisition layer. 
+
+\item \textit{VR-SAAFE} is divided in three components too: task presentation environment based on Unity, eye tracking application and the physiological signals acquisition module.
+
+\end{itemize}
 
 \subsection{Physiological sensors}
+This section presents the physiological sensors used by similar projects. This could help understanding which are the most used and useful signals in this kind of applications.
+\textit{PhysioVR} uses only three signals: 
+
+\begin{itemize}
+
+\item heart rate, acquired through Android wearable devices such as smartbands, smartwatches or camera-based sensors;
+
+\item EEG, obtained from a low-cost -wearable headband called Muse BCI;
+
+\item EMG, acquired with Myo Armband, a device that contains 8 sensors and that recognizes gestures.
+
+\end{itemize}
+\textit{PhysSigTK} uses sensors considering criteria such as ease of use, price, software support and low-level access to data. Therefore the employed devices are four, measuring several different signals:  
+
+\begin{itemize}
+
+\item Empatica E3/E4, that measures EDA, blood volume, temperature and movement;
+
+\item Wild Divine Iom, that provides skin conductance level (SCL) and heart rate;
+
+\item e-Healt, an Arduino-based device that supports different sensors. In this case heart rate, galvanic skin response (a.k.a. EDA), ECG and breathing activity;  
+
+\item NeuroSky Mindwave, a low-cost EEG sensor that also provides a heart rate sensor for the ear.
+
+\end{itemize}
+For what concerns \textit{RehabNet}, it uses protocols such as the \textit{Virtual-Reality Peripheral Network (VRPN)} and \textit{Open Sound Control (OSC)} for integrating a large variety of external devices and sensors (trackers, haptic devices, analog input, sound, etc). In addition to this, it natively supports three sensors:
+
+\begin{itemize}
+
+\item EEG acquired with Emotiv EPOC, a wireless EEG headset;
+
+\item EMG, collected through Myomo mPower 1000, a prosthetic arm that also integrates sensors;
+
+\item kinematic data, acquired with the Microsoft Kinect. 
+
+\end{itemize}
+\textit{VR-SAAFE} monitors physiological signals and eye gaze:
+
+\begin{itemize}
+
+\item Biopac Bionomadix measures PPG (from which heart rate can be extracted), skin temperature, EMG, respiration and galvanic skin response;
+
+\item Tobii X120 for eye tracking. 
+
+\end{itemize}
+\textit{Bicycle4CaRe} measures both user's parameters and environmental conditions. The latter are not relevant for the project of this thesis; the former are:
+
+\begin{itemize}
+
+\item heart rate acquired with a pulse-oximeter sensor;
+
+\item breath rate measured through a respiration monitor belt;
+
+\item blood pressure collected with a sphygmomanometer. 
+
+\end{itemize}
 
 \subsection{Connectivity and libraries}
+The project application will need to connect to the devices and to acquire signals. In order to be able to do it, similar systems techniques and methodologies were explored. Here are reported some examples of connectivity and external libraries approaches. 
+
+\begin{itemize}
+
+\item \textit{PhysioVR} transmits data over the UDP protocol. In this way the communication can be multicast and the transmission of all the physiological signals is done using a single port. Data can be accessed even from external devices with UDP capabilities. Users can access from remote and interact with the system bidirectionally, thus receiving data and sending feedback. The application also provides client scripts for different programming languages such as Java, C\#, Python, MATLAB.
+
+\item \textit{MuLES} acquires data from the hardware using third party APIs, SDKs, drivers or implementations of the specific device communication protocol. On the other hand, transmission to the client application is realized through the TCP/IP protocol, which allows to send data to a local network or over the Internet.
+This means that client scripts can be written in any programming language supporting basic socket programming, such as Java or Python.
+
+\item \textit{RehabNet} sends data to a smartphone running the app using a custom implementation of the UDP protocol. It also connects to an analysis and tracking tool. As anticipated above, the system makes use of VRPN and OSC protocols in order to connect to other external devices or libraries, for example the OpenViBE BCI software.
+
+\item The interesting thing about \textit{Cube} is that it provides different connectivity solutions that can be used simultaneously or not. An example of it is ECG acquisition: it can be wired or wireless (Bluetooth) transmitted to a local machine, transmitted to a smartphone over the Internet or using a satellite connection
+
+\end{itemize}
 
 \subsection{Events and triggers}
+Since the system should deal with key events and markers, here are presented the solutions adopted by \textit{PhysioVR} and \textit{Bicycle4Care}.
+
+\begin{itemize}
+
+\item \textit{PhysioVR} acquires data from the UDP connection and makes it available inside the Unity environment. This brings developers to have physiological data usable inside the experience, allowing some game parameters to be bound to physiological signals, or events to be triggered when certain conditions are verified. Another way of creating events is to have external inputs: the VR user can receive triggers influencing the experience scenario from an external application that monitors in real-time the person's vitals.
+
+\item \textit{Bicycle4Care} reads data in real-time and guides the user through the experience with ad-hoc messages. Like for PhysioVR, events can be triggered when some parameter exceed a certain threshold. 
+
+\end{itemize}
 
 \subsection{Synchronization}
+After the acquisition, data needs to be synchronized. Among the presented systems, only \textit{Athena} and \textit{VAST} use synchronization or explicitly write about it.
+
+\begin{itemize}
+
+\item \textit{Athena} acquires data from the combat simulator and the sensors and then it synchronizes them. This data is composed of physiological signals, game events like firing and target hits and haptic device activations. The adopted synchronization technique is not mentioned.
+
+\item \textit{VAST} acquires real-time physiological signals and VR data in a synchronized manner for offline analysis. Markers are used to synchronize the different signals and the virtual environment. 
+
+\end{itemize}
 
 \subsection{Extensions}
+This section is not related with similar systems but presents two ideas for extension and improvement of VR experience that can be useful for the project development.
 
+\begin{itemize}
 
+\item The first idea comes from S. Otsuka and others, who think that physiological signals could be easier acquired if the sensors are embedded in a VR headset \cite{otsuka2017physiological}. They propose a new HMD that contains some sensors: their first prototype consists of a VR headset with an integrated PPG sensor that can measure heart rate. This system was tested and gave positive results, so this kind of devices could be a real and interesting thing for the future of VR and physiological signals research.
+
+\item The second one is about VR and eye tracking. A paper about this is the one by Pradeep Raj and others \cite{kb2017gaze}. It presents the design of a VR-based social communication platform integrated with eye tracking technology. The authors believe that this kind of technology can be useful for presenting and analyze social situations and communication.
+
+\end{itemize}
 
 \section{Design}
 
 
-%\begin{figure}
-%\centering
-%\includegraphics[scale=0.5,angle=90]{images/general_schema}
-%\caption{General initial schema}
-%\end{figure}
+
+
 
 \chapter{Realization}
 \section{Code snippets}
