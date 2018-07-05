@@ -36,15 +36,24 @@
 \contentsline {subsection}{\numberline {4.1.5}Synchronization}{23}{subsection.4.1.5}
 \contentsline {subsection}{\numberline {4.1.6}Extensions}{23}{subsection.4.1.6}
 \contentsline {section}{\numberline {4.2}Design}{23}{section.4.2}
-\contentsline {chapter}{\numberline {5}Realization}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Code snippets}{25}{section.5.1}
-\contentsline {section}{\numberline {5.2}Third parties software}{25}{section.5.2}
-\contentsline {chapter}{\numberline {6}Validation}{27}{chapter.6}
-\contentsline {section}{\numberline {6.1}Proof of concept test}{27}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Protocol}{27}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Results}{27}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Usability test}{27}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Protocol}{27}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Results}{27}{subsection.6.2.2}
-\contentsline {chapter}{\numberline {7}Conclusions}{29}{chapter.7}
-\contentsline {chapter}{Bibliography}{31}{section*.18}
+\contentsline {subsection}{\numberline {4.2.1}Initial design}{24}{subsection.4.2.1}
+\contentsline {subsubsection}{General architecture}{24}{section*.18}
+\contentsline {subsubsection}{Controllers}{24}{section*.19}
+\contentsline {subsection}{\numberline {4.2.2}First prototype}{24}{subsection.4.2.2}
+\contentsline {subsubsection}{Original schema}{24}{section*.22}
+\contentsline {subsubsection}{Implementation changes}{24}{section*.25}
+\contentsline {subsection}{\numberline {4.2.3}Second prototype}{29}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Third prototype}{30}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Synchronization}{30}{section.4.3}
+\contentsline {chapter}{\numberline {5}Realization}{33}{chapter.5}
+\contentsline {section}{\numberline {5.1}Third parties software}{33}{section.5.1}
+\contentsline {section}{\numberline {5.2}Code snippets}{33}{section.5.2}
+\contentsline {chapter}{\numberline {6}Validation}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Proof of concept test}{35}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Protocol}{35}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Results}{35}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Usability test}{35}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Protocol}{35}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Results}{35}{subsection.6.2.2}
+\contentsline {chapter}{\numberline {7}Conclusions}{37}{chapter.7}
+\contentsline {chapter}{Bibliography}{39}{section*.32}

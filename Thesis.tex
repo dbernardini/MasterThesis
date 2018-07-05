@@ -605,7 +605,7 @@ After the acquisition, data needs to be synchronized. Among the presented system
 \end{itemize}
 
 \subsection{Extensions}
-This section is not related with similar systems but presents two ideas for extension and improvement of VR experience that can be useful for the project development.
+This section is not related with similar systems but presents two ideas for extension and improvement of VR experiences that can be useful for the project development.
 
 \begin{itemize}
 
@@ -616,17 +616,132 @@ This section is not related with similar systems but presents two ideas for exte
 \end{itemize}
 
 \section{Design}
+After analyzing similar systems with their potentially useful features, now we can introduce the actual design of this thesis project. 
+Since there have been problems and changes during the development phase, the general design has been modified during the implementation of the system. 
+The development was divided into three prototypes, each adding a new functionality to the system:
+
+\begin{enumerate}
+\item real-time visualization of the VR video, the camera video and the signals stream;
+\item recording and synchronization of the streams;
+\item replay of the streams and insertion of key markers.
+\end{enumerate} 
+
+Here are presented all the design prototypes, from the initial idea to the final result.
+
+\subsection{Initial design}
+
+\subsubsection{General architecture}
+
+The system architecture follows the actors involved in the process: the user and the examiner. The participant is the person who takes part in the experiment: he is equipped with a VR headset (HTC Vive), physiological sensors (BiosignalsPlux kit) and a webcam pointing to his face. The communication between these sensors and the examiner's computer is realized through controllers. The examiner component is constituted by the controllers, a recording and synchronization layer that saves the data on the storage and a Java application used to see in real-time what the user is experiencing and to start/stop the recording. 
+Concerning the offline mode of the system, it is represented by two additional blocks. The first one deals with the offline part of the application itself, while the other represents the external applications that can be used to analyze data (e.g. MATLAB or Python). This last part is not covered by the project.
+Figure 4.1 shows an overall view of the system.
+
+\subsubsection{Controllers}
+
+Regarding the controllers, in the initial design they communicate with the Java application, that executes every task.
+In this case the application represents both the real-time and offline Java applications showed in figure 4.1.
+Starting from VR, the development platform is Unity and to send the video stream to the Java application we are going to use the \textit{RockVR} plugin, which allows to record a video of what the user sees through the headset and send it to a streaming server in real time. The application is then going to read the stream and play it using the \textit{MediaPlayer} Java class. For the physiological sensors we can use the official \textit{Plux} API, which allows to easily acquire the signals data from Java.
+Finally, for the webcam we are going to use the \textit{JavaCV} library, a wrapper of the \textit{OpenCV library}, for visualizing and recording the video stream. For a detailed description of these tools and libraries see section \ref{sec:thirdparty}. The controllers schema is represented in figure 4.2.
+
+\begin{figure}
+\centering
+\includegraphics[scale=.5, angle=90]{images/general_schema}
+\caption{Initial general architecture}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.57, angle=90]{images/2_controllers2}
+\caption{Controllers initial schema}
+\end{figure}
+
+\subsection{First prototype}
+
+\subsubsection{Original schema}
+The first prototype only concerns the real-time visualization of the VR video, the camera video and the signals stream. Therefore, we can focus on the left side of figure 4.1: we only consider the user, the controllers and the real-time visualization application (figure 4.3). For what concerns the controllers, we are interest only in the real-time tasks, so the diagram is the one in figure 4.4.
+
+\begin{figure}
+\centering
+\includegraphics[scale=.5]{images/prot1_initial_design}
+\caption{First prototype original architecture}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.5]{images/prot1_controllers_original2}
+\caption{First prototype controllers original schema}
+\end{figure}
+
+\subsubsection{Implementation changes}
+The original diagrams changed when implementing the prototype. The main problem was about the VR video streaming: encoding it, sending it to the streaming server (localhost) and decoding it generated a delay of about 3 seconds. This resulted in an out of sync visualization, since camera and physiological signals were synchronized but VR was not. This behavior was not acceptable. Even if it could have been possible to synchronize the three sources after the recording, it was not possible to see everything in real-time, failing to satisfy the first requirement.
+
+Trying to find a solution to this problem was not easy. Playing the VR video stream from the Java application means to export what happens in Unity and to read it from an external application. The only suitable technique found was the above one. With it not working, the only reasonable solution was to use two screens and split the real-time part of the application in two pieces: one handling camera and signals visualization and one the VR visualization. The former will be handled by the Java application itself on the first screen and the latter by Unity on the second screen (figure 4.5).
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.5]{images/prot1_implementation}
+\caption{First prototype architecture implementation}
+\end{figure}
+
+As regards the controllers, we can simply get rid of the VR part because it has no more connections with the main application (figure 4.6).
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.51]{images/prot1_controllers_implementation2}
+\caption{First prototype controllers implementation}
+\end{figure}
+
+\subsection{Second prototype}
+The second prototype was supposed to add the recording functionality to the system. The general schema is exactly the same as the one in figure 4.5, but with the addition of the \textit{Record and sync} module and of the storage (figure 4.7). 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.41]{images/prot2_general}
+\caption{Second prototype architecture}
+\end{figure}
+
+Since from the first prototype architecture change we can not visualize the VR video in real-time from the Java application, we can not record it either, so we need to do it from Unity itself. This is the reason why there is also a Unity controller in the diagram (figure 4.8): this component is the RockVR plugin, and it will handle the recording of what the user sees and store it on the hard drive. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.47]{images/prot2_controllers2}
+\caption{Second prototype controllers}
+\end{figure}
+
+This new consideration brings the system to be composed of two modules: the first one is a Java application that plays and records the camera and signals streams, the second one is a Unity package that records the VR video.
+At the end of the acquisition, the 3 files – VR video, camera video and signals data – are synchronized (see section \ref{sec:sync}) in order to be replayed and analyzed properly.
+
+\subsection{Third prototype}
+The third and last prototype represents the final version of the system. It adds the replay feature to the application, included the option to insert markers on specific moments of the playback. 
+
+Both the architecture and the controllers schemas are similar to the initial idea one, except for the separation of Java and Unity blocks (figure 4.9 and 4.10). 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.44]{images/prot3_controllers2}
+\caption{Third prototype controllers}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.5, angle=90]{images/prot3_architecture}
+\caption{Third prototype architecture}
+\end{figure}
+
+\section{Synchronization}
+\label{sec:sync}
 
 
 
 
 
 \chapter{Realization}
-\section{Code snippets}
+
 
 \section{Third parties software}
+\label{sec:thirdparty}
 
-
+\section{Code snippets}
 
 \chapter{Validation}
 \section{Proof of concept test}
