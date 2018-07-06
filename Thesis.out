@@ -1,43 +1,43 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Technologies}{}% 2
-\BOOKMARK [1][-]{section.2.1}{Virtual Reality}{chapter.2}% 3
-\BOOKMARK [2][-]{subsection.2.1.1}{VR spread}{section.2.1}% 4
-\BOOKMARK [2][-]{subsection.2.1.2}{Applications}{section.2.1}% 5
-\BOOKMARK [2][-]{subsection.2.1.3}{Measures}{section.2.1}% 6
-\BOOKMARK [2][-]{subsection.2.1.4}{VR headsets}{section.2.1}% 7
-\BOOKMARK [2][-]{subsection.2.1.5}{Tracking devices}{section.2.1}% 8
-\BOOKMARK [1][-]{section.2.2}{Physiological signals}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.2.1}{Wearable devices}{section.2.2}% 10
-\BOOKMARK [2][-]{subsection.2.2.2}{Professional kits}{section.2.2}% 11
-\BOOKMARK [0][-]{chapter.3}{Project concept}{}% 12
-\BOOKMARK [1][-]{section.3.1}{VR and physiological signals}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.2}{Idea and requirements}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.2.1}{Use cases}{section.3.2}% 15
-\BOOKMARK [2][-]{subsection.3.2.2}{Requirements}{section.3.2}% 16
-\BOOKMARK [0][-]{chapter.4}{Design}{}% 17
-\BOOKMARK [1][-]{section.4.1}{Similar systems}{chapter.4}% 18
-\BOOKMARK [2][-]{subsection.4.1.1}{Design}{section.4.1}% 19
-\BOOKMARK [2][-]{subsection.4.1.2}{Physiological sensors}{section.4.1}% 20
-\BOOKMARK [2][-]{subsection.4.1.3}{Connectivity and libraries}{section.4.1}% 21
-\BOOKMARK [2][-]{subsection.4.1.4}{Events and triggers}{section.4.1}% 22
-\BOOKMARK [2][-]{subsection.4.1.5}{Synchronization}{section.4.1}% 23
-\BOOKMARK [2][-]{subsection.4.1.6}{Extensions}{section.4.1}% 24
-\BOOKMARK [1][-]{section.4.2}{Design}{chapter.4}% 25
-\BOOKMARK [2][-]{subsection.4.2.1}{Initial design}{section.4.2}% 26
-\BOOKMARK [2][-]{subsection.4.2.2}{First prototype}{section.4.2}% 27
-\BOOKMARK [2][-]{subsection.4.2.3}{Second prototype}{section.4.2}% 28
-\BOOKMARK [2][-]{subsection.4.2.4}{Third prototype}{section.4.2}% 29
-\BOOKMARK [1][-]{section.4.3}{Synchronization}{chapter.4}% 30
-\BOOKMARK [0][-]{chapter.5}{Realization}{}% 31
-\BOOKMARK [1][-]{section.5.1}{Synchronization}{chapter.5}% 32
-\BOOKMARK [1][-]{section.5.2}{Third parties software}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.3}{Code snippets}{chapter.5}% 34
-\BOOKMARK [0][-]{chapter.6}{Validation}{}% 35
-\BOOKMARK [1][-]{section.6.1}{Proof of concept test}{chapter.6}% 36
-\BOOKMARK [2][-]{subsection.6.1.1}{Protocol}{section.6.1}% 37
-\BOOKMARK [2][-]{subsection.6.1.2}{Results}{section.6.1}% 38
-\BOOKMARK [1][-]{section.6.2}{Usability test}{chapter.6}% 39
-\BOOKMARK [2][-]{subsection.6.2.1}{Protocol}{section.6.2}% 40
-\BOOKMARK [2][-]{subsection.6.2.2}{Results}{section.6.2}% 41
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 42
-\BOOKMARK [0][-]{section*.34}{Bibliography}{}% 43
+\BOOKMARK [0][-]{chapter.2}{Project concept and technologies}{}% 2
+\BOOKMARK [1][-]{section.2.1}{VR and physiological signals}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Idea and requirements}{chapter.2}% 4
+\BOOKMARK [2][-]{subsection.2.2.1}{Use cases}{section.2.2}% 5
+\BOOKMARK [2][-]{subsection.2.2.2}{Requirements}{section.2.2}% 6
+\BOOKMARK [1][-]{section.2.3}{Virtual Reality}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.3.1}{VR spread}{section.2.3}% 8
+\BOOKMARK [2][-]{subsection.2.3.2}{Applications}{section.2.3}% 9
+\BOOKMARK [2][-]{subsection.2.3.3}{Measures}{section.2.3}% 10
+\BOOKMARK [2][-]{subsection.2.3.4}{VR headsets}{section.2.3}% 11
+\BOOKMARK [2][-]{subsection.2.3.5}{Tracking devices}{section.2.3}% 12
+\BOOKMARK [1][-]{section.2.4}{Physiological signals}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.4.1}{Wearable devices}{section.2.4}% 14
+\BOOKMARK [2][-]{subsection.2.4.2}{Professional kits}{section.2.4}% 15
+\BOOKMARK [1][-]{section.2.5}{Used technologies}{chapter.2}% 16
+\BOOKMARK [0][-]{chapter.3}{Design}{}% 17
+\BOOKMARK [1][-]{section.3.1}{Similar systems}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.1.1}{Design}{section.3.1}% 19
+\BOOKMARK [2][-]{subsection.3.1.2}{Physiological sensors}{section.3.1}% 20
+\BOOKMARK [2][-]{subsection.3.1.3}{Connectivity and libraries}{section.3.1}% 21
+\BOOKMARK [2][-]{subsection.3.1.4}{Events and triggers}{section.3.1}% 22
+\BOOKMARK [2][-]{subsection.3.1.5}{Synchronization}{section.3.1}% 23
+\BOOKMARK [2][-]{subsection.3.1.6}{Extensions}{section.3.1}% 24
+\BOOKMARK [1][-]{section.3.2}{Design}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.2.1}{Initial design}{section.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.2.2}{First prototype}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.3}{Second prototype}{section.3.2}% 28
+\BOOKMARK [2][-]{subsection.3.2.4}{Third prototype}{section.3.2}% 29
+\BOOKMARK [1][-]{section.3.3}{Synchronization}{chapter.3}% 30
+\BOOKMARK [0][-]{chapter.4}{Realization}{}% 31
+\BOOKMARK [1][-]{section.4.1}{Synchronization}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.2}{Third parties software}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{Code snippets}{chapter.4}% 34
+\BOOKMARK [0][-]{chapter.5}{Validation}{}% 35
+\BOOKMARK [1][-]{section.5.1}{Proof of concept test}{chapter.5}% 36
+\BOOKMARK [2][-]{subsection.5.1.1}{Protocol}{section.5.1}% 37
+\BOOKMARK [2][-]{subsection.5.1.2}{Results}{section.5.1}% 38
+\BOOKMARK [1][-]{section.5.2}{Usability test}{chapter.5}% 39
+\BOOKMARK [2][-]{subsection.5.2.1}{Protocol}{section.5.2}% 40
+\BOOKMARK [2][-]{subsection.5.2.2}{Results}{section.5.2}% 41
+\BOOKMARK [0][-]{chapter.6}{Conclusions}{}% 42
+\BOOKMARK [0][-]{section*.38}{Bibliography}{}% 43
