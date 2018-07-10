@@ -13,7 +13,7 @@
     year = "2017",
    howpublished = "\url{https://www.gartner.com/smarterwithgartner/top-trends-in-the-gartner-hype-cycle-for-emerging-technologies-2017/}",
     note = "[Online; accessed 26-June-2018]"
-  }
+}
   
 @misc{hypecycledef,
     author = "{Gartner}",
@@ -21,7 +21,7 @@
     year = "2017",
     howpublished = "\url{https://www.gartner.com/it-glossary/hype-cycle}",
     note = "[Online; accessed 26-June-2018]"
-  }
+}
   
 @article{slater2003note,
   title={A note on presence terminology},

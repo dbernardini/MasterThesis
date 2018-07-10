@@ -1,65 +1,78 @@
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Project concept and technologies}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}VR and physiological signals}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}Idea and requirements}{4}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Use cases}{4}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Requirements}{6}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Virtual Reality}{8}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}VR spread}{8}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Applications}{9}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Measures}{10}{subsection.2.3.3}
-\contentsline {subsubsection}{Immersion and presence}{10}{section*.5}
-\contentsline {paragraph}{Measuring immersion}{10}{section*.6}
-\contentsline {paragraph}{Measuring presence}{10}{section*.7}
-\contentsline {subsubsection}{Co-presence}{11}{section*.8}
-\contentsline {subsubsection}{VR sickness}{11}{section*.9}
-\contentsline {subsubsection}{Situation awareness}{12}{section*.10}
-\contentsline {subsubsection}{Workload}{12}{section*.11}
-\contentsline {subsection}{\numberline {2.3.4}VR headsets}{12}{subsection.2.3.4}
-\contentsline {subsubsection}{Tethered VR headsets}{12}{section*.12}
-\contentsline {subsubsection}{Mobile VR headsets}{13}{section*.13}
-\contentsline {subsubsection}{Standalone VR headsets}{13}{section*.14}
-\contentsline {subsection}{\numberline {2.3.5}Tracking devices}{13}{subsection.2.3.5}
-\contentsline {subsubsection}{Body tracking}{14}{section*.15}
-\contentsline {subsubsection}{Hand tracking}{15}{section*.16}
-\contentsline {subsubsection}{Eye tracking}{15}{section*.17}
-\contentsline {section}{\numberline {2.4}Physiological signals}{15}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Wearable devices}{16}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Professional kits}{16}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}Used technologies}{18}{section.2.5}
-\contentsline {subsubsection}{Virtual reality}{18}{section*.19}
-\contentsline {subsubsection}{Programming language}{18}{section*.20}
-\contentsline {subsubsection}{Physiological sensors}{18}{section*.21}
-\contentsline {chapter}{\numberline {3}Design}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}Similar systems}{19}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Design}{20}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Physiological sensors}{21}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Connectivity and libraries}{22}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Events and triggers}{22}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Synchronization}{23}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Extensions}{23}{subsection.3.1.6}
-\contentsline {section}{\numberline {3.2}Design}{23}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Initial design}{24}{subsection.3.2.1}
-\contentsline {subsubsection}{General architecture}{24}{section*.22}
-\contentsline {subsubsection}{Controllers}{24}{section*.23}
-\contentsline {subsection}{\numberline {3.2.2}First prototype}{24}{subsection.3.2.2}
-\contentsline {subsubsection}{Original schema}{24}{section*.26}
-\contentsline {subsubsection}{Implementation changes}{24}{section*.29}
-\contentsline {subsection}{\numberline {3.2.3}Second prototype}{29}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Third prototype}{30}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Synchronization}{30}{section.3.3}
-\contentsline {subsubsection}{Synchronization issue}{30}{section*.36}
-\contentsline {subsubsection}{System timestamps}{32}{section*.37}
-\contentsline {chapter}{\numberline {4}Realization}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}Synchronization}{35}{section.4.1}
-\contentsline {section}{\numberline {4.2}Third parties software}{35}{section.4.2}
-\contentsline {section}{\numberline {4.3}Code snippets}{35}{section.4.3}
-\contentsline {chapter}{\numberline {5}Validation}{37}{chapter.5}
-\contentsline {section}{\numberline {5.1}Proof of concept test}{37}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Protocol}{37}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Results}{37}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Usability test}{37}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Protocol}{37}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Results}{37}{subsection.5.2.2}
-\contentsline {chapter}{\numberline {6}Conclusions}{39}{chapter.6}
-\contentsline {chapter}{Bibliography}{41}{section*.38}
+\contentsline {chapter}{\numberline {1}Project concept and technologies}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}VR and physiological signals}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Idea and requirements}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Use cases}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Requirements}{4}{subsection.1.2.2}
+\contentsline {section}{\numberline {1.3}Virtual Reality}{6}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}VR spread}{6}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Applications}{7}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Measures}{8}{subsection.1.3.3}
+\contentsline {subsubsection}{Immersion and presence}{8}{section*.5}
+\contentsline {paragraph}{Measuring immersion}{8}{section*.6}
+\contentsline {paragraph}{Measuring presence}{8}{section*.7}
+\contentsline {subsubsection}{Co-presence}{9}{section*.8}
+\contentsline {subsubsection}{VR sickness}{9}{section*.9}
+\contentsline {subsubsection}{Situation awareness}{10}{section*.10}
+\contentsline {subsubsection}{Workload}{10}{section*.11}
+\contentsline {subsection}{\numberline {1.3.4}VR headsets}{10}{subsection.1.3.4}
+\contentsline {subsubsection}{Tethered VR headsets}{10}{section*.12}
+\contentsline {subsubsection}{Mobile VR headsets}{11}{section*.13}
+\contentsline {subsubsection}{Standalone VR headsets}{11}{section*.14}
+\contentsline {subsection}{\numberline {1.3.5}Tracking devices}{11}{subsection.1.3.5}
+\contentsline {subsubsection}{Body tracking}{12}{section*.15}
+\contentsline {subsubsection}{Hand tracking}{13}{section*.16}
+\contentsline {subsubsection}{Eye tracking}{13}{section*.17}
+\contentsline {section}{\numberline {1.4}Physiological signals}{13}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Wearable devices}{14}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Professional kits}{14}{subsection.1.4.2}
+\contentsline {section}{\numberline {1.5}Used technologies}{16}{section.1.5}
+\contentsline {subsubsection}{Virtual reality}{16}{section*.19}
+\contentsline {subsubsection}{Programming language}{16}{section*.20}
+\contentsline {subsubsection}{Physiological sensors}{16}{section*.21}
+\contentsline {chapter}{\numberline {2}Design}{17}{chapter.2}
+\contentsline {section}{\numberline {2.1}Similar systems}{17}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Design}{18}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Physiological sensors}{19}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Connectivity and libraries}{20}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Events and triggers}{20}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Synchronization}{21}{subsection.2.1.5}
+\contentsline {subsection}{\numberline {2.1.6}Extensions}{21}{subsection.2.1.6}
+\contentsline {section}{\numberline {2.2}Design}{21}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Initial design}{22}{subsection.2.2.1}
+\contentsline {subsubsection}{General architecture}{22}{section*.22}
+\contentsline {subsubsection}{Controllers}{22}{section*.23}
+\contentsline {subsection}{\numberline {2.2.2}First prototype}{22}{subsection.2.2.2}
+\contentsline {subsubsection}{Original schema}{22}{section*.26}
+\contentsline {subsubsection}{Implementation changes}{22}{section*.29}
+\contentsline {subsection}{\numberline {2.2.3}Second prototype}{27}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Third prototype}{28}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Synchronization}{28}{section.2.3}
+\contentsline {subsubsection}{Synchronization issue}{28}{section*.36}
+\contentsline {subsubsection}{System timestamps}{30}{section*.37}
+\contentsline {chapter}{\numberline {3}Realization}{33}{chapter.3}
+\contentsline {section}{\numberline {3.1}Main development phases}{33}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}GUI}{33}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}First prototype}{35}{subsection.3.1.2}
+\contentsline {subsubsection}{Camera}{35}{section*.39}
+\contentsline {subsubsection}{Physiological signals}{37}{section*.40}
+\contentsline {subsection}{\numberline {3.1.3}Second prototype}{40}{subsection.3.1.3}
+\contentsline {subsubsection}{Camera}{40}{section*.44}
+\contentsline {subsubsection}{Physiological signals}{44}{section*.45}
+\contentsline {subsubsection}{Unity}{46}{section*.47}
+\contentsline {subsubsection}{Synchronization}{46}{section*.48}
+\contentsline {subsection}{\numberline {3.1.4}Third prototype}{50}{subsection.3.1.4}
+\contentsline {subsubsection}{Playback}{50}{section*.49}
+\contentsline {subsubsection}{Markers insertion}{51}{section*.50}
+\contentsline {section}{\numberline {3.2}Third-party software}{52}{section.3.2}
+\contentsline {section}{\numberline {3.3}Build and usage instructions}{53}{section.3.3}
+\contentsline {subsubsection}{Java application}{54}{section*.52}
+\contentsline {subsubsection}{Unity package}{54}{section*.53}
+\contentsline {chapter}{\numberline {4}Validation}{57}{chapter.4}
+\contentsline {section}{\numberline {4.1}Proof of concept test}{57}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Development}{57}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Test protocol}{57}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Results}{59}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Usability test}{59}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Protocol}{59}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Results}{59}{subsection.4.2.2}
+\contentsline {chapter}{Bibliography}{61}{section*.54}

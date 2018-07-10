@@ -3,6 +3,31 @@
 \documentclass[binding=0.6cm,LaM]{sapthesis}
 \usepackage[utf8]{inputenx}
 \usepackage{lscape} 
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
 \usepackage{hyperref}
 \hypersetup{pdftitle={Thesis},pdfauthor={Danilo Bernardini}}
 \title{Design, development and evaluation of a framework for recording and synchronizing experiences in VR with physiological signals}
@@ -20,7 +45,7 @@
 \maketitle
 \tableofcontents
 \mainmatter
-\chapter{Introduction}
+%\chapter{Introduction}
 
 
 
@@ -31,7 +56,7 @@ This chapter introduces the project idea and the concepts behind it, starting fr
 \section{VR and physiological signals}
 Virtual reality is a powerful tool not only for commercial use, but also for research. Since the beginning of its lifetime, in fact, people started to think that it could have been a good environment to test and study certain phenomenons, especially concerning human body and behavior. From the first VR basic prototypes to the advanced systems of these last years, researchers have conducted lost of experiments about people reactions and emotions with VR making use of physiological signals. The reason why virtual reality is so appropriate and useful for research is that it can simulate real situations, so it gives researchers countless opportunities: they can recreate real world environments, test new kinds of interaction, make people relive specific scenes, and so on. 
 
-As mentioned above, for many years there have been many examples of studies about VR with the use of physiological signals. An early research paper dealing with this subject was the one about fear of flying written by Wiederhold and others and published in 1998 \cite{wiederhold1998fear}. The authors wanted to test if there are significant physiological differences between people who are afraid of flying and people who are not. In order to accomplish that, they studied the body responses of two groups of people, one suffering from a fear of flying and the other one not, while experiencing a virtual reality flight. They measured heart rate, peripheral skin temperature, respiration rate, sweat gland activity and brain wave activity. The results of the experiment were successful and they could conclude that there exist significant differences between these two groups of people. In addition, the authors also succeeded in reducing arousal of people with fear of flying making them experience the simulation for several times. 
+As mentioned above, for many years there have been several examples of studies about VR with the use of physiological signals. An early research paper dealing with this subject was the one about fear of flying written by Wiederhold and others and published in 1998 \cite{wiederhold1998fear}. The authors wanted to test if there are significant physiological differences between people who are afraid of flying and people who are not. In order to accomplish that, they studied the body responses of two groups of people, one suffering from a fear of flying and the other one not, while experiencing a virtual reality flight. They measured heart rate, peripheral skin temperature, respiration rate, sweat gland activity and brain wave activity. The results of the experiment were successful and they could conclude that there exist significant differences between these two groups of people. In addition, the authors also succeeded in reducing arousal of people with fear of flying making them experience the simulation for several times. 
 
 The following year another research paper about VR and physiological signals was published by Cobb and others \cite{cobb1999virtual}. This was one of the first investigations about VR sickness (see \ref{sec:measures}): the authors examined effects and symptoms of virtual reality on people using several methodologies, including physiological parameters.
 
@@ -438,7 +463,7 @@ Sensors: accelerometer, heart rate
 Hardware and software platform that provides professional measurements and analysis for research and education. The main module can acquire up to 16 different channels but it has no internal memory and it needs an external power supply.
 
 \item[BiosignalsPlux]
-BiosignalsPlux makes research kits that include 4 or 8 sensors and a 4 or 8 channels wireless hub, which has internal memory and battery. It works with third parties applications and sensors and comes with  Android, C++, Python, Java and MATLAB APIs.
+BiosignalsPlux makes research kits that include 4 or 8 sensors and a 4 or 8 channels wireless hub, which has internal memory and battery. It works with third-party applications and sensors and comes with  Android, C++, Python, Java and MATLAB APIs.
 
 \item[Libelium MySignals]
 Software (uses an includes box screen) or hardware (uses Arduino) versions, acquired data is sent to the cloud and can be visualized on the web or on the mobile app. Up to 18 different sensors can be connected to the system. Available SDK for the hardware version.
@@ -473,10 +498,7 @@ From these considerations we can conclude that the best programming language to 
 
 \subsubsection{Physiological sensors}
 The last choice to make is about which sensors to use in the framework.
-There were several aspects that were taken into account in order to decide which professional kit was the best among those reported in figure 2.4. The kit should support the larger possible number of different sensors; it should be wireless, so that it is easier to connect and more practical to use; it should have internal memory and a battery, so that it can be also used for other kind of applications (e.g. external experiments); it should be compatible with third-party hardware or software and provide APIs in order to be usable with custom services and applications. The only option that satisfied all these condition was the BiosignalsPlux Researcher kit: 8 sensors, wireless, portable and with well documented API for several programming languages.
-
-
-
+There were several aspects that were taken into account in order to decide which professional kit was the best among those reported in figure 2.4. The kit should support the larger possible number of different sensors; it should be wireless, so that it is easier to connect and more practical to use; it should have internal memory and a battery, so that it can be also used for other kind of applications (e.g. external experiments); it should be compatible with third-party hardware or software and provide APIs in order to be usable with custom services and applications. The only option that satisfied all these condition was the BiosignalsPlux Researcher kit: 8 sensors, wireless, portable and with well documented API for several programming languages. The chosen sensors were: ECG, EMG, EEG, EDA, respiration, accelerometer (one channel per axis), temperature and force.
 
 
 \chapter{Design}
@@ -593,7 +615,7 @@ The project application will need to connect to the devices and to acquire signa
 
 \item \textit{PhysioVR} transmits data over the UDP protocol. In this way the communication can be multicast and the transmission of all the physiological signals is done using a single port. Data can be accessed even from external devices with UDP capabilities. Users can access from remote and interact with the system bidirectionally, thus receiving data and sending feedback. The application also provides client scripts for different programming languages such as Java, C\#, Python, MATLAB.
 
-\item \textit{MuLES} acquires data from the hardware using third party APIs, SDKs, drivers or implementations of the specific device communication protocol. On the other hand, transmission to the client application is realized through the TCP/IP protocol, which allows to send data to a local network or over the Internet.
+\item \textit{MuLES} acquires data from the hardware using third-party APIs, SDKs, drivers or implementations of the specific device communication protocol. On the other hand, transmission to the client application is realized through the TCP/IP protocol, which allows to send data to a local network or over the Internet.
 This means that client scripts can be written in any programming language supporting basic socket programming, such as Java or Python.
 
 \item \textit{RehabNet} sends data to a smartphone running the app using a custom implementation of the UDP protocol. It also connects to an analysis and tracking tool. As anticipated above, the system makes use of VRPN and OSC protocols in order to connect to other external devices or libraries, for example the OpenViBE BCI software.
@@ -812,30 +834,840 @@ This procedure guarantees a good level of synchronization, which basically relie
 
 
 \chapter{Realization}
+After the complete design of the system, it is time to talk about the actual implementation. This chapter explains some realization choices and gives details about core parts of the application.
 
-\section{Synchronization}
+\section{Main development phases}
+Despite Java is a cross-platform language, Unity is only available for Windows and MacOS, and the former is more widespread that the latter. That is why the chosen operating system for the development and deployment of the framework was Windows. 
+The development tool for the application was \textit{NetBeans}, an integrated development environment (IDE) originally released for Java, but then expanded to support also other programming languages such as C, C++ and Javascript.
+Since the application needs to make use of external libraries, the best option was to use the build automation tool \textit{Apache Maven}.
+It allows to easily describe dependencies and integrate libraries and plugins in the project, downloading them from repositories. 
+
+\subsection{GUI}
+For what concerns the graphical interface of the application, the selected tool was \textit{JavaFX}, a software platform for creating desktop applications. It aims at being the replacement of Swing as the standard GUI library for Java applications. Latest versions of JavaFX use \textit{FXML}, an XML-based markup language, for defining user interfaces. The platform also provides a scene builder to create scenes by dragging and dropping components into it; this information is saved as FXML code, whose variables can be referred from Java controllers using the annotation \textit{@FXML}. 
+
+The graphical interface structure is very basic and simple, providing only the really necessary components. The application is divided in two parts named  and \textit{Offline mode}, each with its own user interface. Their layouts are very similar, the only big difference is that the former contains signals configuration controls while the latter also includes VR video playback.
+The general idea is to have the screen horizontally split in half. The bottom part shows the signals while the upper part is in turn divided in two slices, one for the camera and one for the signals configuration (or VR video playback). Figure 4.1 shows an empty \textit{Real-time mode} GUI. 
+
+\begin{figure}[p]
+\centering
+\includegraphics[scale=.46, angle=90]{images/realtime2}
+\caption{Real-time mode user interface}
+\end{figure}
+
+
+\subsection{First prototype}
+The first prototype just had to show signals data and camera and VR videos in real-time. As already explained in the \textit{Design} chapter, the real-time part pf the framework is divided in two pieces, one is the Java application, handling signals and camera video, and the other is Unity, showing the VR video. For what concerns Unity we do not need any development for this prototype, considering that we are only interested in seeing what the participant sees and Unity already does it in its predefined settings. When the virtual scene starts, it can be played in full-screen mode so that it is easy for the examiner to follow the participant's movements.
+
+Regarding the other application, in this phase it has to be able to display camera video and physiological signals in real-time. Let us start with the camera. 
+
+\subsubsection{Camera}
+
+The camera used during the whole development and testing of the system was a \textit{Logitech} HD webcam connected to the computer via USB. As anticipated above, the software controller that makes camera accessible from Java is the \textit{JavaCV} library (see section \ref{sec:thirdparty}). It provides several methods for capturing and recording camera frames. 
+
+Going into implementation details of this feature, \textit{OpenCVFrameGrabber} class is used to deal with camera input frames. First we need to create a new instance of the class passing as an argument the code of the camera. If the HTC Vive is also connected to the computer we have two active cameras, so the best thing to do is to give 0 as a parameter: this will make the system use the default camera or show a dialog to the user, who can select the one he wants. Next step is to call the \textit{start()} method on the created instance. This causes the object to grab frames from the camera until the \textit{stop()} command is called. In order to handle the incoming stream without blocking the whole execution we need to dedicate a new thread to it. This thread will execute a \textit{Runnable} that captures and displays a frame placing it into an \textit{ImageView}. First the grabber grabs a frame, then this frame is converted into an image that can be set into the ImageView.
+
+When dealing with a graphical interface, every update of it should be executed on the JavaFX Application Thread. To solve this issue, the \textit{setImage(image)} method was called inside a runnable passed as an argument to \textit{Platform.runLater(Runnable runnable)}. This method makes sure that the specified runnable gets executed on the main thread at some unspecified time in the future.
+
+In order to obtain a video containing 30 frames per second (FPS), the grabbing code was executed once every 33 milliseconds. This result was achieved thanks to the usage of the \textit{ScheduledExecutorService} class. Code snippet 4.1 shows in details the described procedure.
+\\
+\renewcommand{\lstlistingname}{Code snippet}
+\begin{lstlisting}[caption={Camera input management}, captionpos=b]
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import org.bytedeco.javacv.Frame;
+import org.bytedeco.javacv.FrameRecorder;
+import org.bytedeco.javacv.FrameGrabber;
+import org.bytedeco.javacv.FFmpegFrameRecorder;
+import org.bytedeco.javacv.Java2DFrameConverter;
+import org.bytedeco.javacv.OpenCVFrameGrabber;
+...
+private ScheduledExecutorService cameraTimer;
+private OpenCVFrameGrabber grabber;
+private Java2DFrameConverter converter;
+@FXML
+private ImageView cameraView;
+...
+
+grabber = new OpenCVFrameGrabber(0);
+converter = new Java2DFrameConverter();
+
+try {
+	grabber.start();
+} catch (FrameGrabber.Exception ex) {
+	logger.log(Level.SEVERE, "Error while initiating frame grabber", ex);
+}
+
+cameraTimer = Executors.newSingleThreadScheduledExecutor();
+cameraTimer.scheduleAtFixedRate(new CameraRunnable(), 0, 33, TimeUnit.MILLISECONDS);
+
+...
+        
+class CameraRunnable implements Runnable {
+
+    @Override
+    public void run() {
+        Frame capturedFrame = null;
+        try {
+            capturedFrame = grabber.grab();
+        } catch (FrameGrabber.Exception ex) {
+            logger.log(Level.SEVERE, "Error while grabbing frame", ex);
+        }
+
+        Image image = SwingFXUtils.toFXImage (converter.convert(capturedFrame), null);  
+            
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                cameraView.setImage(image);
+            }
+        });        
+    }
+}
+        
+\end{lstlisting}
+
+\subsubsection{Physiological signals}
+The other feature we need to implement for this prototype is signals data visualization. BiosignalsPlux device is connected to the computer wireless, using an included Bluetooth dongle.
+The communication between the device and Java is realized through the official Plux Java API (see section \ref{sec:thirdparty}). This consists of a collection of basic classes and methods useful for retrieving sensors signals. The main class is \textit{Device}, which represents the Plux device; the \textit{Frame} class models a frame of acquired data and consists of a sequence number (byte), a boolean indicating the state of the digital input and the actual data. This is represented as an array with 8 elements (16 bits each), one per channel. Before starting the acquisition we need to find the connected device with the \textit{Device.FindDevices(Vector v)}, which stores in \textit{v} the MAC addresses of the discovered devices. Once found, a new Device object is created and the acquisition is started. Just as camera stream, also for signals we need a new thread to acquire data without freezing the whole application. Since Plux device reads data with a sampling rate of 1 kHz, (i.e. 1000 data frames per second), the thread is scheduled to be executed once every millisecond and it simply gets one single frame, storing it in a \textit{Frame} object.
+\\
+\begin{lstlisting}[caption={Sensors data acquisition}, captionpos=b]
+import java.util.Vector;
+import plux.newdriver.bioplux.*;
+...
+private String deviceMAC;
+private Device dev;
+private Device.Frame[] frames;
+private ScheduledExecutorService signalsTimer;
+...
+Vector devs = new Vector();
+        
+try {
+	Device.FindDevices(devs);          
+            
+	if (devs.isEmpty()){
+		Alert alert = new Alert(AlertType.ERROR, "Impossible to connect to the sensors. Please verify the connection and try again.");
+		alert.setTitle("Sensors not found");
+		alert.showAndWait();
+    }
+    else {
+    	deviceMAC = (String) devs.get(0);
+		dev = new Device(deviceMAC);
+		frames = new Device.Frame[1];
+		frames[0] = new Device.Frame();
+		dev.BeginAcq(1000, 0xFF, 16); // 1 kHz, 8 channels, 16 bits
+    }
+}
+catch (BPException err){
+	logger.log(Level.SEVERE, "Error while initializing the device", err); 
+}   
+
+if (!devs.isEmpty()){
+	...
+	Thread getSignals = new Thread(() -> {
+		try {
+    		dev.GetFrames(1, frames);
+    		...
+    	} catch (BPException ex) {
+    		logger.log(Level.SEVERE, "Error while getting the frames", ex);
+    	}
+	});
+
+	signalsTimer = Executors.newSingleThreadScheduledExecutor();
+	signalsTimer.scheduleAtFixedRate(getSignals, 0, 1, TimeUnit.MILLISECONDS);
+}
+        
+\end{lstlisting}
+
+Once acquired, signals data need to be visualized. JavaFX provides chart components that can be used to plot the data. For this kind of signals the best plot type is the line chart; we assign a chart to each signal source. The corresponding Java class is \textit{LineChart<X,Y>}, where X and Y are the axis to be used. In this case we use a number containing the time value as X and a number indicating the sensor signal as Y. The easiest way of populating a chart is to add a \textit{XYChart.Series<X,Y>} to it. This class is used to insert actual data to the chart. A series is assigned to the corresponding chart only when the examiner sets it in the \textit{Sensors configuration} panel; the reason behind this behavior is explained in section \ref{subsec:secondprot}. Once added to the chart, the series need to be regularly updated so that they can show the signals stream. The class that is commonly used in this kind of scenarios is \textit{Timeline}, that allows to define an animation for a JavaFX object. The sensors provide 1000 frames per second but they are too many for visualization, so we can choose to only read some values. A good trade-off is to display 10 frames per second, i.e. to update the chart every 100 milliseconds: this is the value we set for the animation. Every time the animation is executed, the current data frame is read and the series is updated, therefore updating also the chart. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.4]{images/transfer_function}
+\caption{ECG sensor transfer function}
+\end{figure}
+
+Sensors acquire data with a 16 bits resolution, meaning that raw data consists of values ranging from 0 to 65335. To transform this numbers into meaningful measure values we need transfer functions. BiosignalsPlux provides datasheets containing information for each sensor including transfer functions. For example for the ECG sensor the function transforms the raw data into a value ranging from -1.5 mV to 1.5 mV. Figure 4.2 shows the ECG sensor transfer function.
+Functions were easily implemented in Java and used to plot the signals charts. 
+Code snippet 4.3 shows the main parts of this phase, taking as an example the ECG chart; every other chart is visualized with the exact same code. 
+\\
+\begin{lstlisting}[caption={Sensors data visualization}, captionpos=b]
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+...
+@FXML
+private LineChart<Number, Number> ecgChart;
+private XYChart.Series<Number, Number> seriesEcg;
+...
+seriesEcg = new XYChart.Series<>();
+seriesEcg.setName("ECG");
+for (int i = 0; i < 10; i++)
+	seriesEcg.getData().add(new XYChart.Data<>(i, 0));
+
+comboBox1.valueProperty().addListener(new ChangeListener<String>() {
+	@Override
+    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+    	...
+    	if (newValue != null){
+        	switch (newValue){
+        		...
+        		case "ECG":
+                	if (!ecgChart.getData().contains(seriesEcg)){
+                    	ecgChart.getData().add(seriesEcg);
+                    	...
+                    }
+                ...
+            }
+        }
+    }
+});
+
+Timeline updateGraphs = new Timeline(new KeyFrame(Duration.millis(100), (ActionEvent event) -> {
+	try {
+		if (seriesEcg.getData().size() >= 10){
+			seriesEcg.getData().remove(0);
+			...
+		}
+		
+		Device.Frame data = frames[0];
+		
+		seriesEcg.getData().add(new XYChart.Data<>(signalsCounter, transEcg(data.an_in[ecgPos]))); //transfer function
+		...
+		signalsCounter++;
+
+	} catch (Exception ex) {
+		logger.log(Level.SEVERE, "Error while updating charts", ex);
+	}
+}));
+updateGraphs.setCycleCount(Timeline.INDEFINITE);
+updateGraphs.play();
+
+\end{lstlisting}
+
+%Unity???
+
+After the above steps the first prototype was ready and able to read physiological signals and camera video. On the other side, Unity could make the examiner follow the participant's visual experience. Figures 4.3 and 4.4 show what Prototype 1 looks like. An example scene was used for Unity.
+
+\begin{figure}[p]
+\centering
+\includegraphics[scale=.45, angle=90]{images/realtime_complete1}
+\caption{First prototype - Java application}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[scale=.45, angle=90]{images/realtime_complete2}
+\caption{First prototype - Unity}
+\end{figure}
+\label{fig:prot1unity}
+
+
+\subsection{Second prototype}
+\label{subsec:secondprot}
+The second prototype new functionality is the recording one. Once the examiner is able to see everything in real-time, he might want to record a session. In order to keep several over time, a new folder is created every time a new session is recorded. The folder contains camera video, physiological data and VR video, together with some text files containing synchronization information.
+Following the same order as with first prototype, implementation started with camera.
+
+\subsubsection{Camera}
+As well as visualization, JavaCV library also provides recording functionalities. The class that handles recording is \textit{FFmpegFrameRecorder} which, as the name suggests, internally makes use of \textit{FFmpeg}. This is a complete and powerful software tool for recording, converting and streaming audio and video (see section \ref{sec:thirdparty}). 
+
+For what concerns the user interface, a button was added to allow the examiner to start and stop the recording.
+First we need to initialize a new recorder object specifying output path, video resolution and number of audio channels. After setting some other parameters, the recorder can be started. This happens when the user clicks the \textit{Start recording} button. In order to actually record a frame, we need to call the \textit{record(Frame frame)} method on the recorder passing as an argument the frame captured in prototype 1 (see code snippet 4.1). This method is called inside the \textit{CameraRunnable} class created before. A \textit{record} boolean was used to indicate when the recording is active.
+After being recorded, the files need to be synchronized. The synchronization algorithm is the one illustrated in section \ref{sec:sync}. The information about the initial and final timestamps is written in a text file inside the directory of the current session. 
+When the recording starts, the current timestamp is acquired through the \textit{System.currentTimeMillis()} function, which returns the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC. As said before, the granularity of the value depends on the underlying operating system: since we are operating on Windows 10, the value will have a 10 milliseconds accuracy. This is not a big deal because a few dozen delay in synchronization is undetectable by humans and therefore is definitely acceptable. Instead of the final timestamp, in the text file was stored the duration in milliseconds of the recording.
+This metadata was saved as a JSON tree containing both camera and signals information. Camera fields were initial timestamp, duration (milliseconds), frame rate, size (kilobytes) and path of the file relative to the application main directory. Signals fields instead were initial timestamp, sampling rate, number of samples and path of the file relative to the application main directory. The following example shows the structure of the camera and signals metadata file.
+\\
+\begin{lstlisting}[caption={Recorded files metadata example}, captionpos=b]
+{
+	"cameraVideo":{
+		"timestamp":1526219413241,
+		"frameRate":30,
+		"duration":160367,
+		"size":19465223,
+		"path":"\20180513_154834\cameraVideo.mp4"
+	},
+	"signals":{
+		"timestamp":1526219413241,
+		"samplingRate":1000,
+		"samples":158671,
+		"path":"\20180513_154834\signals.txt"
+	}
+}
+
+\end{lstlisting}
+
+Code snippet 4.4 contains portions of code that implement what stated above. For details about synchronization see section \ref{sec:syncrealization}.  
+\\
+\begin{lstlisting}[caption={Camera recording}, captionpos=b]
+import org.bytedeco.javacv.FFmpegFrameRecorder;
+...
+private Timestamp timestamp;
+private FFmpegFrameRecorder recorder;
+private boolean record = false;
+private static long startTime = 0;
+...
+recorder = new FFmpegFrameRecorder(
+                cameraVideoPathTemp,
+                captureWidth, captureHeight, 0);
+recorder.setVideoCodec(avcodec.AV_CODEC_ID_H264);
+recorder.setFormat(MP4);
+recorder.setFrameRate(FRAME_RATE);
+... // Additional recorder settings
+... 
+private void startRecording() {
+	try {
+		recorder.start();
+		record = true;
+	} catch (FrameRecorder.Exception ex) {
+		logger.log(Level.SEVERE, "Error while starting camera recording", ex);
+	}
+}
+
+private void stopRecording(){
+	record = false;
+	recorder.stop(); 
+	...
+}
+..
+class CameraRunnable implements Runnable{
+	@Override
+	public void run() {
+		...
+		if (record){
+			startTime = System.currentTimeMillis();
+			timestamp = new Timestamp(startTime);
+        	...
+			try {
+				recorder.record(capturedFrame);
+			} catch (FrameRecorder.Exception ex) {
+				logger.log(Level.SEVERE, "Error while recording the frame", ex);
+		}   
+    }
+}
+        
+\end{lstlisting}
+
+\subsubsection{Physiological signals}
+For recording physiological signals we can just extend the reading functionality presented above. Saving sensors data in fact is not hard, since data frames can be easily represented as strings, thus they can be written in plain text files. The idea is that when we acquire the signals (once every millisecond), instead of just plotting the value (every 100 milliseconds) we can write it on a file.  
+The same \textit{record} flag as before can be used to control this behavior. If it is true then we can store the value, otherwise we just save it in a variable. Data frame is formatted as a tab-separated string containing sequence number, digital input flag and actual signals data.
+Before writing the frames, we insert in the file a line containing signals metadata such as timestamp, sampling rate and, most importantly, names of the used sensors. This allows to know which specific sensor each column refers to and is also the reason why we need combo boxes to configure the signals channels. Ax example signals file is the one in figure 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.41]{images/signals_file2}
+\caption{Saved signals file example}
+\end{figure}
+
+Taking into account all these considerations, the signals recording code results as just an extension of the one reported in code snippet 4.2.
+\\
+\begin{lstlisting}[caption={Signals recording}, captionpos=b]
+import java.io.FileWriter;
+import java.io.IOException;
+...
+private FileWriter signalsWriter;
+...
+if (!devs.isEmpty()){
+	try {
+		signalsWriter = new FileWriter(signalsPathTemp);
+	} catch (IOException ex) {
+		logger.log(Level.SEVERE, "Error while creating signals writer", ex);
+	}
+
+	int[] counter = new int[1];
+	Thread getSignals = new Thread(() -> {
+		try {
+			dev.GetFrames(1, frames);
+			if (record){
+				Device.Frame frame = frames[0];
+				String output = counter[0] + "\t" + frame.dig_in + "\t";
+				int length = frame.an_in.length;
+				for (int j = 0; j < length-1; j++){
+					output += frame.an_in[j] + "\t";
+				}
+				output += frame.an_in[length-1];
+		
+				signalsWriter.write(output + System.lineSeparator());
+				counter[0]++;  
+			}
+		} catch (BPException ex) {
+			logger.log(Level.SEVERE, "Error while getting the frames", ex);
+		} catch (IOException ex) {
+			logger.log(Level.SEVERE, "Error while writing signals data", ex);
+		}
+	});
+}
+        
+\end{lstlisting}
+
+\subsubsection{Unity}
+For what concerns Unity VR recording, we can use the \textit{RockVR} plugin (see section \ref{sec:thirdparty}). It allows to record the visual output of the game or to send it to a streaming server. There are some customizable options such as output directory and frame rate, but to achieve the application's recording and synchronization goals there is the need of some adjustments. Basically we need the plugin to save the file inside the same session directory as the Java application and to write metadata such as initial timestamp and duration into a text file. The directory selection is an issue because we do not know if the examiner first starts the application or Unity. If he first starts the Java application, this has to create a new folder and Unity has to recognize and use it; if he first starts Unity, the opposite should happen. The solution was to use a "status" text file, placed in framework root directory, that contains the information about which application created the directory. In this way when the other one reads the file it understands that it must not create a new directory and it must use the already existing one. 
+
+The recording functionality is obtained editing parts of some RockVR scripts in order to make the desired behavior possible. 
+The scripts are written in C\# but, since they basically do the same things, the logic of the code is almost the same as the Java application one, so it is not explicitly reported in this section. Recording starts when the user presses the R key on the keyboard, timestamp is obtained using \textit{DateTime.UtcNow} and the metadata JSON file has the exact same structure as the "camera" one in code 4.4.
+
+The general execution flow is the following: Unity starts and checks the "status" file, creating the directory if needed, then waits for the examiner to start the recording. When it happens, timestamp is saved in the text file and recording begins; at the end of the session duration and size are added to the file.
+
+\subsubsection{Synchronization}
 \label{sec:syncrealization}
+Once the recording is stopped from both Unity and the Java application, the created files need to be synchronized. As explained in the design chapter, synchronization is based on system timestamps and files are cut according to timestamps difference. Here are presented some implementation details about it.
+
+First of all, synchronization cannot be executed automatically by the framework at the end of the recording. The reason is that files take some time before being permanently and correctly saved on the hard drive, depending on the session length. This means that the synchronization phase cannot start immediately or after a fixed amount of time. The solution is to give the examiner the responsibility to start it by pressing a button: he has to check if the files are correctly saved and then he can start the process. 
+
+Synchronization is realized through the command line software\textit{FFmpeg} (see section \ref{sec:thirdparty}). There exist some Java wrappers of it but their usage was problematic, so the program was used directly from command line using the \textit{Process} Java class. This allows to create a system process, launch it and wait for its completion. An FFmpeg distribution was downloaded and placed in the same directory as the Java application (see section \ref{sec:build}) so that it is always available.
+
+For what concerns the actual synchronization, first the system reads the metadata files about camera and VR videos (camera and signals have the same timestamp), then it compares their initial timestamps and durations. Combining these two values we obtain four possible cases:
+
+\begin{enumerate}
+
+\item camera video starts first and lasts longer than VR video;
+
+\item camera video starts first and lasts less than VR video;
+
+\item VR video starts first and lasts longer than camera video;
+
+\item VR video starts first and lasts less than camera video.
+
+\end{enumerate}
+
+Let us analyze the first case. If camera video starts before VR video we need to cut its first portion in order to make the two videos start at the same time. If camera file lasts longer than VR file we also need to cut its final portion: by doing that we obtain two videos that start and end at the same time, thus they are synchronized. The same cuts we make on camera can be applied to signals file, since they share the same timestamp and duration. This reasoning can also be applied to case 3 simply reversing camera and VR video. 
+Case 2 (and therefore 4) is a little bit more complicated because we need to cut the first part of the camera video and the last part of VR video, since it lasts more.  
+FFmpeg is executed on a separate thread so that it does not interfere with the main application behavior. Code snippet 4.7 gives an overview of the different cases.
+\\
+\begin{lstlisting}[caption={Cut video cases}, captionpos=b]
+long cameraVideoTs = cameraVideo.get(TIMESTAMP).getAsLong();
+long vrVideoTs = vrVideo.get(TIMESTAMP).getAsLong();
+        
+double vrVideoDuration = vrVideo.get(DURATION).getAsDouble();
+double cameraVideoDuration = cameraVideo.get(DURATION).getAsDouble();
+
+double diff;
+        
+if (vrVideoTs > cameraVideoTs){
+	// camera video starts first
+	diff = vrVideoTs - cameraVideoTs;
+            
+	double start = diff/1000; //seconds
+
+	double cameraNewDuration = cameraVideoDuration - diff;
+	if (cameraNewDuration > vrVideoDuration){ 
+    	// 1. camera video starts first and lasts longer than VR video
+               
+		double end = vrVideoDuration/1000;
+		try {
+			Thread cameraVideoCut = new Thread(new CutVideo(CAMERA_VIDEO, cameraVideoPathTemp, cameraVideoPath, start, end));
+			cameraVideoCut.start();
+        ...
+        cutSignals(start*1000, end*1000);
+        ...
+        } catch (Exception ex) {
+			logger.log(Level.SEVERE, "Error while cutting camera video", ex);
+		}
+	}
+	else {
+		// 2. camera video starts first and lasts less than VR video
+	}
+}
+else {
+	// VR video starts first
+	diff = cameraVideoTs - vrVideoTs;
+            
+	double start = diff/1000;
+
+	double vrNewDuration = vrVideoDuration - diff;
+	if (vrNewDuration > cameraVideoDuration){ 
+		// 3. VR video starts first and lasts longer than camera video
+		...
+	}
+	else {
+		// 4. VR video starts first and lasts less than camera video
+		...
+	}
+} 
+\end{lstlisting}
+
+Cutting the signals file is very easy. Since we acquired data with a 1 kHz rate we have a line for each frame and frame counter represents time (e.g. 12500 refers to 12.5 seconds). This means that, assuming the difference between the timestamps is \textit{diff}, we only need to read the file line by line, ignore the first \textit{diff} lines and copy the others on a new text file. Same thing can be done to the last part of the file.
+
+For what concerns the actual video cut task, a Java process launching \textit{FFmpeg} was invoked. The process is created through the \textit{ProcessBuilder} class, passing as parameters the string arguments that make up the complete command: path of the command to execute, input and output files path, starting and ending points. The class also allows to redirect the process output to the NetBeans console, letting the developer debug the application.
+
+The problem with video cut is that it takes time. The first attempt with \textit{FFmpeg} included the option \textit{-codec copy}. This is very fast because makes the program skip decoding and re-encoding of the stream, but it is not accurate with respect to seeking. Video files are in fact composed of a number of \textit{keyframes}, special frames that contain a whole image of the stream. Intermediate frames, those that are between two keyframes, only store changes from the previous keyframe and not the whole image. This means that we cannot cut a video between two keyframes without first decoding it, because the information is not complete. The first attempt tried to cut the video indicating a specific (up to milliseconds) start time and including the \textit{-codec copy} option. This resulted in a video cut from the previous keyframe, with a significant error. Videos can in fact contain one keyframe for each 4 or 5 seconds of the stream. The only possible solution to this issue was to remove the copy option and decode the entire video, thus considerably slowing down the whole synchronization phase. This obviously depends on the length of the recording session but was considered not excessively long, so the solution was actually adopted.
+A progress bar was added to the GUI to inform the user about the completion of the synchronization job. Code snippet 4.8 shows the creation and the launch of the \textit{FFmpeg} process.
+\\
+\begin{lstlisting}[caption={Cut video process}, captionpos=b]
+private String ffmpeg;
+...
+ffmpeg = workingDirectory + "\\ffmpeg\\bin\\ffmpeg.exe";
+...
+class CutVideo implements Runnable{
+	private final String video;
+	private final String videoPathIn;
+	private final String videoPathOut;
+	private final double start;
+	private final double end;
+	...  
+	@Override
+	public void run() {
+		...
+		try {
+ 			Process process = new ProcessBuilder(
+				ffmpeg,
+				"-i",
+				videoPathIn,
+				"-ss",
+				String.valueOf(start),
+				"-t",
+				String.valueOf(end),
+				"-y",
+				videoPathOut)
+				.redirectErrorStream(true).start();
+
+			StringBuilder strBuild = new StringBuilder();
+			BufferedReader processOutputReader = new BufferedReader(new InputStreamReader(process.getInputStream(), Charset.defaultCharset()));
+			String line;
+			while ((line = processOutputReader.readLine()) != null) {
+				strBuild.append(line).append(System.lineSeparator());
+			}
+			process.waitFor();
+			...
+		} catch (Exception ex) {
+			logger.log(Level.SEVERE, "Error while cutting the video", ex);
+		}
+	}
+}
+\end{lstlisting}
+
+\subsection{Third prototype}
+The third prototype adds the replay functionality to the system and brings it to its final version. The first thing to do is to implement the playback feature for camera and VR videos, then the one for the signals. Finally, we can add markers insertion functionality.
+In order to replay a session we first need to switch to \textit{Offline mode}, then to open a folder containing the files. Both these tasks are executable through the application menu bar. 
+
+\subsubsection{Playback}
+Camera and VR video can be played using the \textit{MediaPlayer} class that provides the basic media controls such as play, pause, stop and seek. It works inside a \textit{MediaView} graphical object and it just needs the path of the file to open. 
+We use a single slider to give the user a visual overview on the playback progress. If a point on the slider is clicked, media players seek the corresponding time on the videos, and signals charts do the same. These behaviors are realized through property listeners that bind slider to media players and signals. Code snippet 4.9 gives an example of what said above and refers to VR video; the code for camera video is exactly the same.
+
+\begin{lstlisting}[caption={Play video}, captionpos=b]
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+import javafx.scene.control.Slider;
+...
+private MediaPlayer vrMediaPlayer;
+@FXML
+private MediaView vrMediaView;
+@FXML
+private Slider slider;
+...
+private void openVrVideo(String path) {
+	if (path != null) {
+		File file = new File(path);
+		Media media = new Media(file.toURI().toString());
+		vrMediaPlayer = new MediaPlayer(media);
+		vrMediaView.setMediaPlayer(vrMediaPlayer);
+            
+		vrMediaPlayer.totalDurationProperty().addListener(
+			(obs, oldDuration, newDuration) -> 				
+				slider.setMax(newDuration.toSeconds()));
+		slider.valueChangingProperty().addListener(
+			(obs, wasChanging, isChanging) -> {
+				if (! isChanging) {
+           			vrMediaPlayer.seek(Duration.seconds(slider.getValue()));
+            }
+		});
+		...
+	}
+}
+\end{lstlisting}
+
+For what concerns physiological signals, it was used the same chart class as the one used for the \textit{Real-time mode}. In order to play data fast and make seek possible, the whole text file containing signals data is stored in a list variable. In the large majority of cases this load does not affect system responsiveness because signals file is not big. Obviously if the recording session becomes very long (e.g. two hours) there may be some problems. The playback of the signals itself is realized with the same logic as the real-time acquisition one: \textit{Timeline} class with 10 readings per second. The code is very similar to that in code snippet 4.3 so it is not reported here.
+
+\subsubsection{Markers insertion}
+The last thing to do is to implement the functionality that allow to insert a marker in a point of a session to denote an important event that occurred.
+
+The idea is to save this information in a new text file as a \textit{(timestamp, name)} pair. In this case timestamps are not the same entity as before: they indicate the number of milliseconds elapsed since the beginning of the video (exluding pauses), i.e. the time instant in the session when the event happens. Markers information is stored in JSON format (see example below).
+
+\begin{lstlisting}[caption={Markers file example}, captionpos=b]
+{
+	"markers":[
+		{
+			"timestamp":97361,
+			"name":"Event1"
+		},
+		{
+			"timestamp":10906,
+			"name":null
+		}
+	]
+}
+\end{lstlisting}
 
 
-\section{Third parties software}
+When the user wants to add a marker he clicks a button, playback stops and the corresponding timestamp is saved. A dialog window appears asking the user to insert a name; if this field is left blank the event will have a \textit{null} name. The \textit{(timestamp, name)} pair is then written on the text file. The point on the GUI when the marker is added is denoted by a red rectangle; if the mouse pointer moves over it a tooltip with the name of the event appears, if the mouse clicks on it, slider value is set to that point value.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.8]{images/markers}
+\caption{Markers appearance}
+\end{figure}
+
+Code snippet 4.10 shows the insertion of a marker on the GUI.
+\\
+\begin{lstlisting}[caption={Insert marker}, captionpos=b]
+import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.Tooltip;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.layout.AnchorPane;
+import java.util.Optional;
+...
+@FXML
+private AnchorPane anchorPane;
+...
+@FXML
+private void insertMarker(ActionEvent event) throws IOException {
+	pause();
+	int timestamp = (int)(slider.getValue()*1000);
+	Marker marker = new Marker(timestamp);
+	TextInputDialog dialog = new TextInputDialog();
+	dialog.setTitle("Event name");
+	dialog.setHeaderText("Insert event marker");
+	dialog.setContentText("Name of the event:");
+	Optional<String> result = dialog.showAndWait();
+	result.ifPresent(name -> marker.setName(name));
+	
+	drawMarker(marker);
+	
+	... // add marker to markers list in the text file		
+}
+
+private void drawMarker(Marker marker){
+	Tooltip tooltip = new Tooltip(marker.getName());
+	Tooltip.install(marker, tooltip);
+	marker.setFill(Color.RED);
+        
+	marker.setOnMouseClicked((MouseEvent event) -> {
+		double value = marker.getOffset()*slider.getMax()/slider.getWidth();
+		slider.setValue(value);
+	});
+	...
+	anchorPane.getChildren().add(marker);
+}
+
+\end{lstlisting}
+
+
+
+
+\section{Third-party software}
 \label{sec:thirdparty}
+During the design and realization phase several third-party libraries and tools were cited. They represent a big resource for developers because allow to reuse software written by others, often already tested and improved. Despite most of them were already mentioned earlier, here they are described in details.
 
-\section{Code snippets}
+\begin{description}
+
+\item[SteamVR plugin] is a unity package that allows developers to integrate virtual reality into Unity projects. It is available for free on the official Unity Asset Store and works with both HTC Vive and Oculus Rift. 
+
+\item[RockVR VR Capture] is a plugin for recording video and audio of virtual reality Unity applications. It also supports multi-camera captures and 360 video captures. Like SteamVR plugin, it can be downloaded for free from the Unity Asset Store and works with both HTC Vive and Oculus Rift.
+
+\item[JavaCV] is a utility that wraps commonly used libraries for computer vision such as OpenCV, FFmpeg, OpenKinect and others. Its source code is available on GitHub and it can be automatically downloaded with Maven.
+
+\item[Plux API] is the official BiosignalsPlux API and allows to connect to the sensors and retrieve data. Besides Java, it is also available for C++, Python, C\# and MATLAB, as well as Android and iOS. It can be obtained for free from the producer's website.
+
+\item[FFmpeg] is one of the most famous and widespread frameworks for audio and video coding, decoding, filtering, streaming and playing. Its main component is a free and portable command line tool compatible with the majority of operating systems.
+
+\item[Gson] is a Java library developed by Google for converting Java objects into their JSON representation. Its source code is available on GitHub and it can be integrated in a project using Maven.
+
+\item[JSON Object] is a class representing the C\# equivalent of Gson. Its code is available on GitHub but it can be directly downloaded from the Unity Asset Store.
+
+\item[Metadata extractor] is a Java library for reading and extract metadata from image and video files. It supports a variety of standards such as Exif, XMP and IPTC but also formats like WAV, AVI, MP4, PNG, GIF. It can be downloaded with Maven. 
+
+\item[Java MP4 Parser] is a Java API for reading, writing and creating MP4 containers. It is able to mux audio and video, append recordings, change metadata and cut videos. The library can be retrieved through Maven.
+
+\end{description}
+
+
+\section{Build and usage instructions}
+\label{sec:build}
+Once the development phase is completed, we need to build the application so that it can be deployed and used by other people. Since it is composed of two modules, the system will be distributed as a Windows installer that installs the Java application and a Unity package that can be imported and used inside a Unity project.
+
+\subsubsection{Java application}
+The application uses some Maven dependencies that we need to include in the output \textit{jar} file. This can be done using the \textit{Maven Shade Plugin}, which allows to create a jar package containing also all the dependencies. 
+After this step, we need to be able to launch the package as a regular desktop application. The tool we can use for this purpose is \textit{Launch4j}, a cross-platform tool for wrapping Java applications distributed as jars into Windows executable files (.exe). It also allows to add Java Virtual Machine (JVM) options, so that we can pass parameters to the execution of the program. We exploit this opportunity to specify to the JVM the path of the Plux dll file with the command \textit{-Djava.library.path=./lib}. This folder needs to be distributed together with the executable file. Once the .exe file is ready, we need to create an installer that installs the program on the user's computer. This operation can be done using \textit{NSIS} (Nullsoft Scriptable Install System), a tool used to create Windows installers from ZIP archives. Therefore we add the previously built executable file and the library folder to a new archive, together with the \textit{ffmpeg} folder containing the software for video cut. We import the archive into NSIS and specify the default installation folder. The output of the tool is a self-extracting executable file that can install the framework very quickly and easily.
+The detailed steps to create the installer are the following:
+
+\begin{enumerate}
+
+\item build from NetBeans using the Maven Shade Plugin;
+
+\item open the Jar file from step 1 into Launch4j and specify the output name;
+
+\item inside the JRE tab, write 1.8.0 in the "min JRE version" field and a big number in the "max JRE version" field, since the app is not limited to run below a certain JRE version;
+
+\item inside the JRE tab, write \textit{-Djava.library.path=./lib} in the "JVM options" field;
+
+\item build the wrapper;
+
+\item create a ZIP archive with the executable file of step 5, the \textit{lib} folder and the \textit{ffmpeg} folder;
+
+\item run NSIS and select "Installer based on ZIP file";
+
+\item open the ZIP of step 6 into NSIS, specify an installer name, select "\$PROGRAMFILES\textbackslash YourNameHere" in the "Default folder" field and insert a name;
+
+\item generate the installer file.
+
+\end{enumerate}
+
+\subsubsection{Unity package}
+The Unity package contains the SteamVR asset, the modified RockVR plugin, the JSON Object asset and some additional configuration files. Building the package is a trivial task because it can be done in the editor itself (select all the assets to include, right click on them and select "Export Package...").
+
+When a user wants to use the package he has to import it and set some parameters in order to make it work properly. They basically consist in attaching video capture scripts to some game objects and adjust some of their properties. 
+In the following list of required steps we assume that the right controller is used to control the recording but this can be changed without any constraints by the user.
+
+\begin{enumerate}
+
+\item import the package;
+
+\item delete the \textit{Main Camera} object;
+
+\item place the \textit{CameraRig} prefab (SteamVR/Prefabs) in the scene; 
+
+\item place the \textit{CaptureCamera} prefab (RockVR/Vive/Demo/Prefabs) under \textit{CameraRig/Camera (head)}; 
+
+\item attach \textit{Properties} file to a fixed game object (e.g. \textit{CaptureCamera});
+
+\item attach \textit{CameraSampleCtrl} script (RockVR/Vive/Demo/Scripts) to \textit{CameraRig/Controller (right)}; 
+
+\item attach \textit{Vive\textunderscore EventCtrl} script (RockVR/Vive/Scripts/Controls) to \textit{CameraRig/Controller (right)};
+
+\item attach \textit{VideoCapture} script (RockVR/Video/Scripts) to \textit{CameraRig/Camera (head)/CameraCapture};
+
+\item attach \textit{AudioCapture} script (RockVR/Video/Scripts) to \textit{CameraRig/Camera (head)/CameraCapture};
+
+\item in the \textit{CameraRig/Controller (right)} inspector go to \textit{Video Capture Ctrl}, set \textit{Video Captures} size to 1, drag and drop \textit{CaptureCamera} into \textit{Element 0} and also into \textit{Audio Capture}.
+
+\end{enumerate}
+
+At this point Unity is ready to record sessions alongside the Java application.
+
 
 \chapter{Validation}
+busvcubb
+
 \section{Proof of concept test}
 
-\subsection{Protocol}
+\subsection{Development}
+
+\subsection{Test protocol}
+
+\begin{enumerate}
+
+\item Inform the participant about the test: it will be a VR scene, we will collect his physiological signals during the experience and we will record both the VR video and the participant's face with a webcam (3 minutes);
+
+\item let the participant fill the consent form (2 minutes);
+
+\item collect participant's data: age, sex, experience with VR, experience with videogames and with touchpad controllers (2 minutes);
+
+\item describe the VR scene to the participant(30 seconds): 
+\begin{quote}
+"You are in a dungeon of a castle and you have to find a key in the shortest possible time. The key is clearly visible once you reach the room where it is placed; you can just walk on it in order to get it"; \end{quote}
+
+\item describe the locomotion system to the participant (30 seconds):
+\begin{quote}
+"You can look around simply turning your head and you can walk using the controller touchpad. The reference for the locomotion is the headset direction, i.e. pressing on the positive Y axis will make you move forward with respect to the direction you are facing";
+\end{quote}
+
+\item set up the sensors on the participant's body (5 minutes):
+\begin{itemize}
+\item Accelerometer, placed on the chest through an elastic band;
+\item Respiration, placed on the abdomen through an elastic band;
+\item EDA, placed on the left hand index finger and middle finger;
+\item ECG, placed on the left side of the chest, below the heart;
+\item EMG, placed on the neck, on the sternocleidomastoid muscle;
+\end{itemize} 
+
+\item let the participant play an example VR scene (from VRTK example scenes) in order to get used to VR and locomotion system (3 minutes);
+
+\item check if all the sensors are working properly through the official BiosignalsPlux application (OpenSignals);
+
+\item prepare the test (1 minute): 
+\begin{itemize}
+\item check if the Java application task is still running from previous tests (if yes, kill it);
+\item check if HTC Vive headset and controllers are ready;
+\item check if physiological signals hub is turned on;
+\item check if "status" file is correct;
+\end{itemize}
+
+\item run the system (1 minute):
+\begin{enumerate}
+\item run the Java application;
+\item configure sensors inside the application;
+\item check if signals are correctly acquired;
+\item start recording from the application:
+\item play the Unity scene;
+\item start recording from Unity;
+\end{enumerate}
+
+\item let the participant play the VR scene until he finds the key, then wait 30 seconds more (2 minutes);
+
+\item stop recording (30 seconds):
+\begin{enumerate}
+\item stop recording from Unity; 
+\item stop recording from the Java application;
+\item check if everything went fine;
+\item stop the Unity application;
+\end{enumerate}
+
+\item synchronize videos and signals (1 minute);
+
+\item unplug sensors from the participant's body (30 seconds);
+
+\item tell the participant not to tell anything about the experience to other people (30 seconds).
+
+\end{enumerate}
 
 \subsection{Results}
 
 \section{Usability test}
 
 \subsection{Protocol}
+Video tutorial shows how to run the Java application and the Unity scene, how to configure the sensors, how to start, stop and synchronize a recording session, how to switch to offline mode, how to open a previous recording, how to play it and how to add a marker to it. 
+
+\begin{enumerate}
+
+\item Collect the participant's personal data: age, sex, education/professional training;
+
+\item ask for expertise - on a scale of 1 to 5 (1 for no experience, 5 for expert) in the following topics:
+\begin{itemize}
+\item data analysis;
+\item physiological data recording;
+\item virtual reality system use and setup;
+\item programming.
+\end{itemize}
+
+\item let the participant watch the video tutorial;
+
+\item participant can ask the examiner questions about things he did not understand from the tutorial;
+
+START PHASE 1
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+\item 
+
+
+\end{enumerate}
+
+
+
 
 \subsection{Results}
 
-\chapter{Conclusions}
+%\chapter{Conclusions}
+%\section{Future work ???}
 
 \backmatter
 \cleardoublepage
