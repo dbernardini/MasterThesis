@@ -13,7 +13,7 @@
     year = "2017",
    howpublished = "\url{https://www.gartner.com/smarterwithgartner/top-trends-in-the-gartner-hype-cycle-for-emerging-technologies-2017/}",
     note = "[Online; accessed 26-June-2018]"
-}
+  }
   
 @misc{hypecycledef,
     author = "{Gartner}",
@@ -21,7 +21,7 @@
     year = "2017",
     howpublished = "\url{https://www.gartner.com/it-glossary/hype-cycle}",
     note = "[Online; accessed 26-June-2018]"
-}
+  }
   
 @article{slater2003note,
   title={A note on presence terminology},
@@ -285,4 +285,43 @@
   pages={38--41},
   year={2017},
   organization={IEEE}
+}
+
+@article{levenson1990voluntary,
+  title={Voluntary facial action generates emotion-specific autonomic nervous system activity},
+  author={Levenson, Robert W and Ekman, Paul and Friesen, Wallace V},
+  journal={Psychophysiology},
+  volume={27},
+  number={4},
+  pages={363--384},
+  year={1990},
+  publisher={Wiley Online Library}
+}
+
+@article{brown1991new,
+  title={New observations on the normal auditory startle reflex in man},
+  author={Brown, P and Rothwell, JC and Thompson, PD and Britton, TC and Day, BL and Marsden, CD},
+  journal={Brain},
+  volume={114},
+  number={4},
+  pages={1891--1902},
+  year={1991},
+  publisher={Oxford University Press}
+}
+
+@article{brooke1996sus,
+  title={SUS-A quick and dirty usability scale},
+  author={Brooke, John and others},
+  journal={Usability evaluation in industry},
+  volume={189},
+  number={194},
+  pages={4--7},
+  year={1996},
+  publisher={London--}
+}
+
+@article{vanheart,
+  title={Heart Rate Analysis for Human Factors: Development and Validation of an Open Source Toolkit for Noisy Naturalistic Heart Rate Data},
+  author={Van Gent, P and Farah, H},
+  year={2018}
 }

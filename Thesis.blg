@@ -3,44 +3,46 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Thesis.aux
 The style file: ieeetr.bst
 Database file #1: bibliography.bib
-You've used 29 entries,
+Warning--empty journal in vanheart
+You've used 33 entries,
             1876 wiz_defined-function locations,
-            653 strings with 10189 characters,
-and the built_in function-call counts, 8487 in all, are:
-= -- 848
-> -- 324
+            680 strings with 10890 characters,
+and the built_in function-call counts, 9657 in all, are:
+= -- 968
+> -- 371
 < -- 0
-+ -- 119
-- -- 90
-* -- 598
-:= -- 1173
-add.period$ -- 31
-call.type$ -- 29
-change.case$ -- 29
++ -- 136
+- -- 103
+* -- 685
+:= -- 1338
+add.period$ -- 35
+call.type$ -- 33
+change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 29
-duplicate$ -- 455
-empty$ -- 813
-format.name$ -- 90
-if$ -- 2086
+cite$ -- 34
+duplicate$ -- 513
+empty$ -- 917
+format.name$ -- 103
+if$ -- 2369
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 27
-newline$ -- 92
-num.names$ -- 29
-pop$ -- 105
+int.to.str$ -- 33
+missing$ -- 31
+newline$ -- 104
+num.names$ -- 33
+pop$ -- 114
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 315
+skip$ -- 357
 stack$ -- 0
-substring$ -- 564
-swap$ -- 189
+substring$ -- 652
+swap$ -- 214
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 92
-width$ -- 31
-write$ -- 299
+warning$ -- 1
+while$ -- 105
+width$ -- 35
+write$ -- 339
+(There was 1 warning)

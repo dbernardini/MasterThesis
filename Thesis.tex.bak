@@ -30,22 +30,36 @@
 
 \usepackage{hyperref}
 \hypersetup{pdftitle={Thesis},pdfauthor={Danilo Bernardini}}
-\title{Design, development and evaluation of a framework for recording and synchronizing experiences in VR with physiological signals}
+\title{Design, development and evaluation of a \\framework for recording and synchronizing \\experiences in VR with physiological signals}
 \author{Danilo Bernardini}
 \IDnumber{1544247}
 \course{Engineering in Computer Science}
-\courseorganizer{Facoltà di Ingegneria dell'informazione, informatica e statistica}
+\courseorganizer{Faculty of Information Engineering, Informatics and Statistics}
 \AcademicYear{2017/2018}
+\examdate{20 July 2018}
+\examiner{M. Schaerf}
+\examiner{S. Bonomi}
+\examiner{G. Grisetti}
+\examiner{M. Mecella}
+\examiner{D. C. D’Elia}
+\examiner{D. Lembo}
+\examiner{R. Rosati}
 \copyyear{2018}
 \advisor{Prof. Massimo Mecella}
-%\coadvisor{Prof. Maurizio Caon}
+\coadvisor{Prof. Maurizio Caon}
 \authoremail{danilo.bernardini93@gmail.com}
 \begin{document}
 \frontmatter
 \maketitle
+
+\begin{acknowledgments} 
+jsnib
+
+\end{acknowledgments}
+
 \tableofcontents
 \mainmatter
-%\chapter{Introduction}
+\chapter{Introduction}
 
 
 
@@ -1549,13 +1563,53 @@ At this point Unity is ready to record sessions alongside the Java application.
 
 
 \chapter{Validation}
-busvcubb
+The last chapter of this thesis is about the validation of the developed framework. The basic definition of software validation is to check if the final product meets customer's requirements and expectations. In this case requirements refers to high-level requests, i.e. general ideas and customer needs behind the product. This means that validation checks if software is compliant with what the stakeholders (investors, managers, users) asked. It only covers the basic concept of the product, it does not concern low-level specification or software performance.
 
-\section{Proof of concept test}
+The validation phase is generally executed after verification, which can be considered as the complementary process of validation. While validation concerns high-level requirements, verification deals with specification details and software behavior. We can say that it checks if the product is correct, i.e. if the software fully satisfies the requirements, if it contains errors or bugs, and so on. 
 
-\subsection{Development}
+We can refer to this thesis project to make an example about the difference between the two concepts. Validation is about checking if the general idea of the framework is satisfied. The high-level requirement of this system is to make research work about VR and physiological signals easier by providing a ready-to-use environment that records and synchronizes the different streams. Moreover, the system should be a useful tool for easily find correlations between VR events and physiological signals. Another high-level requirement for the system is that it has to be user-friendly and easy to use also for users not expert in computer science.
+The main validation task is therefore to answer the questions: \textit{is the system really useful to the potential users? Can we really have everything recorded and automatically synchronized? Can we really find with ease correlations and connections between what happens in VR and how the body reacts? Is the system easy to use by everyone?}
+
+On the other hand, verification deals with checking if system requirements are satisfied. With this framework researchers can see in real-time, record and replay an experiment session; they can easily find in all the three sources (camera, VR and signals) key moments when events happened and mark them; they can access and analyze data with third-party tools. The questions we need to answers are therefore: \textit{can we see in real-time and record the session? Does synchronization work properly (errors, delay, etc)? Can we mark events? Does the system save data in a convenient format so that it can be properly analyzed?}
+
+Although verification is an important step of software development, this chapter only focuses on validation. There are several methodologies that can be used to evaluate the validity of a system. In the next sections are presented two different techniques that can be considered as parts of the validation process. The first one is a \textit{proof of concept} test and the second one is a \textit{usability} test. 
+
+\section{Proof of concept}
+A proof of concept is a realization of a certain idea to prove its effectiveness and validity. It is often used to demonstrate that a theory is feasible or that a system behaves correctly; it may be represented by a prototype, a demo, a partial system, and so on. A proof of concept can be also used to show that a system satisfies the requirements and expectations it was designed for. The latter case is the one this proof of concept refers to: we will design a scenario that will demonstrate the potential of the system and that can be a good measure for validation. In particular, the proof of concept will allow to answer the question about the possibility to find correlation between VR events and body reactions. Obviously physiological signals data and correlation can be analyzed also without the framework. Body signals are independent from the context, their acquisition does not depend on the virtual experience and their analysis can be conducted offline with any suitable software. However, a more complex task is to relate data with events that happen in VR. In some cases it would not be easy to associate a point in the data to each relevant event because the streams are not synchronized. This especially applies if acquired physiological data is large enough, i.e. the recorded session is very long.
+
+The main advantage of the framework is just that: to facilitate research work and analysis with a system that handles recording and synchronization. Using the framework allows to replay a session, find the events by watching the videos and mark them, allowing an offline analysis of the data with the exact knowledge of when things happened.
+
+In order to prove that the system is actually helpful for the above purpose, the proof of concept will be constituted by a virtual experience in which an event happens. During the experience physiological data will be acquired and at the end of the session the streams will be synchronized. Finally, data will be analyzed showing that it is easy to find relevant moments and draw conclusions about the whole experience.
+
+\subsection{Design and development}
+The proof of concept idea was to create a VR scenario containing an event that could generate clearly visible reactions in users. In this way we would be able to say for sure if event and body response are correlated. There exist a lot of different human emotions that can arise as a response to external events and stimuli. Some of them are easily measurable with physiological signals, others are harder to detect. Since we need unambiguous results, we can exploit a well-studied emotion: fear. We know that fear causes several physiological reactions and in particular heart rate acceleration and respiration and skin conductance increase  \cite{levenson1990voluntary}. Furthermore, a loud auditory stimulus can make muscles contract as a consequence of a startle response. The muscle that reacts more quickly to this kind of stimuli is the sternocleidomastoid \cite{brown1991new}.
+
+Starting from these considerations, the proof of concept scenario will involve a frightening visual stimuli coupled with a very loud noise. In particular, the virtual environment will consist of an abandoned dungeon with some rooms and corridors. In one of the rooms there is a monster that only appears when the player goes inside: as soon as the player enters the room a frightening loud scream starts and the monster appears and moves towards the player very fast; when it reaches him, it disappears. This scenario should allow to register a clean physiological signals difference between what happens before and after the event. 
+With respect to what said above we will measure heart rate, electrodermal activity (EDA), electromyography (EMG) and respiration. In addition to these signals we will also collect body acceleration with an accelerometer.
+
+Going more in depth with the VR scene, it is developed in Unity ising only free assets found on the internet. The main scenario consists of a dungeon package named \textit{Decrepit Dungeon LITE} while the monster is part of the \textit{Fantasy Monster (Wizard) DEMO}; both these packages were downloaded from the Asset Store. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.28]{images/dungeon2}
+\caption{Dungeon scene}
+\end{figure}
+
+Locomotion is a crucial aspect in VR games. Developers usually avoid classical first person walking because it often causes sickness in players (see section \ref{sec:measures}). The most secure way of implementing locomotion without generating sickness is through pointers: player uses the controller to point a spot in the environment, pressed a button and the character is teleported there. Although this solution usually avoids sickness, in this proof of concept scene it is not the best option. Players need to walk through the corridors and enter rooms in order to explore the whole environment and to finally meet the monster. Simply teleporting into the designated room would not produce the same scary effect. Another reason why in this case sickness is not a big issue is that the experience should be very short: since the dungeon environment is quite small, people should not a lot of time to complete the test. Locomotion is achieved using \textit{Virtual Reality Toolkit} (VRKT), a collection of tools and methods for rapidly developing VR projects. It includes a locomotion system that makes the character move using the HTC Vive controller touchpad. The package also include some demo scenes where the players can get learn and get used to the locomotion system.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.28]{images/monster2}
+\caption{Monster}
+\end{figure}
+
+The experiment is conducted in such a way that participants are focused on exploring the environment and do not expect a scary event. In order to achieve this goal, we say them they have to find a key that is placed in a specific room in the shortest possible time. Finally, audio is used to create an even more immersive and challenging experience: players can ear the character's footsteps while it walks and a background music plays during the whole experience. The selected music track is \textit{Find Your Way}, extracted from \textit{Final Fantasy VIII} original score. This track should engage players and make them feel like they are in a challenging quest. Finally, the frightening noise was a scary scream found on the internet.
+
 
 \subsection{Test protocol}
+The test was conducted on 15 volunteers, 10 males and 5 females, aged between 19 and 38 (mean 26.27, SD 5.33). They were asked if they had experience with VR, videogames or a touchpad controller. The majority of them had experience with videogames, tried VR once but had no experience at all with touchpad controllers. Participants signed a consent form about being filmed and being aware of possible VR sickness.
+In order to be rigorous and formal, the test was conducted in the exact same way for every participant. The test protocol is the one that follows. For each step is indicated the estimation of its duration. Each session should take 20 to 25 minutes.
+
 
 \begin{enumerate}
 
@@ -1585,7 +1639,7 @@ busvcubb
 
 \item let the participant play an example VR scene (from VRTK example scenes) in order to get used to VR and locomotion system (3 minutes);
 
-\item check if all the sensors are working properly through the official BiosignalsPlux application (OpenSignals);
+\item check if all the sensors are working properly through the official BiosignalsPlux application (OpenSignals) (30 seconds);
 
 \item prepare the test (1 minute): 
 \begin{itemize}
@@ -1619,55 +1673,206 @@ busvcubb
 
 \item unplug sensors from the participant's body (30 seconds);
 
-\item tell the participant not to tell anything about the experience to other people (30 seconds).
+\item tell the participant not to say anything about the experience to other people (30 seconds).
 
 \end{enumerate}
 
 \subsection{Results}
+Every session was successfully recorded and synchronized. The first thing done was to plot data on a chart to see if everything went well (figure 5.3). Due to sensor placement problem, acquired respiration data was not clean and therefore not meaningful for the experiment results.
+The other collected measures were good enough so it was possible to proceed with analysis. If we exclude respiration we have four signals to analyze - accelerometer, EDA, ECG and EMG. Data was studied starting from the knowledge of when the frightening event occurred. This was easily achieved through the offline mode of the application by replaying the whole session, finding the event moment and marking it.
+
+Another technique that can be used to identify with accuracy when the event happens is to use EMG and accelerometer data. Since accelerometer was placed on the chest, it should not move much during the VR experience if there are no relevant events; on the contrary, if something scary happens (monster and loud scream) the body reacts with a small and sudden move - the so-called jump scare. This movement can be easily detected looking at accelerometer data. The same concept applies for EMG. During the experience muscles are generally relaxed, they only contract as a response to sudden stimuli like a loud noise. 
+Therefore the idea was to analyze both accelerometer and EMG data in order to find the max (or min) value of the session: these values should correspond to the very moment when the event occurred. 
+With the purpose of showing that this idea works, we made a comparison between event timestamp registered through replaying the session and the one registered through data analysis. Since the replaying technique is based on a human research of the right timestamp, it cannot be very accurate; data analysis instead has milliseconds accuracy. We consider successful a comparison that shows a difference of at most 1 second between the two techniques. 
+
+\begin{figure}[p]
+\centering
+\includegraphics[scale=.68, angle=90]{images/plot}
+\caption{Data plot example}
+\end{figure}
+
+Another thing that has to be taken into account is that there can be noises in the signals or unexpected sudden movements by the participant without any event, for example VR headset problems, cable stuck, sickness. Since accelerometer signal is composed of three axis data, we have four total data sources: we consider the comparison successful is at least three of them report the same value as the one registered in the offline mode.
+
+Of the 15 sets of data we have, 8 resulted in the same value for manual analysis and for all four data channels, 3 for manual analysis and three data channels, 1 for manual analysis and only one data channel and 3 presented totally different values. For the success criteria stated above we can say that 11 out of 15 samples resulted successful with respect to comparison.
+
+The other relevant measures we acquired are ECG and EDA. They are not helpful to determine the event timestamp because they do not present significant changes in the exact moment it happens. They instead should tend to gradually change after the event occurs: in our specific case they should increase. 
+Hence the idea was to see if they actually change before and after the event in order to find out if there is any correlation between event and body reaction. The choice was to examine mean heart rate and EDA in the 30 seconds preceding and following the event. More specifically, since the event can cause sudden movement that affects the measurement, first 3 seconds after the event were skipped and the mean was computed for the subsequent 30 seconds. EDA signal was ready to be analyzed but ECG was not. We were interested in mean heart rate, so we needed to extract this value from the ECG signal. This was achieved through the \textit{Python Heart Rate Analysis Toolkit} \cite{vanheart}, a framework for heart rate analysis in Python that allows to extract heart rate from ECG and to plot the data. The toolkit analyzes the peaks of the signal, rejects the incorrect ones and computes heart rate. Figure 5.4 shows an example with a 30 seconds ECG.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.419]{images/peaks0}
+\caption{Heart rate from ECG}
+\end{figure}
+
+Because of noisy signal, the toolkit was not able to extract heart rate from 4 of the 15 acquired ECGs, so they were discarded. From each of the remaining 11 signals were extracted two portions of 30 seconds each, the first one starting 30 seconds before the event and the second one starting 3 seconds after. Heart rate was derived from the two portions of each signal and then the difference between them was computed. The average heart rate difference between before and after the event was 12.32\%. 
+% why 30 seconds before: relaxed and used to the vr experience
+
+Finally, EDA data was analyzed. In this case the acquired signal had no problems so every acquired data was correctly analyzed. As heart rate, average EDA was computed for two parts of the original stream: 30 seconds before the event and 30 seconds right after it (EDA is not influenced by movements so there was no need to skip the first 3 seconds after the event). After this, difference between the two portions was computed and it resulted to be 10.17\%. 
+
+\subsection{Discussion}
+Starting from the comparison between "manual" and data-driven approach to find the event in the recorded session, we found out that 11 out of 15 cases resulted successful. This result leads us to conclude two things. The first one is that once the session files are synchronized, identifying the event time is easy. The only thing to do is to replay the session, find the event and mark it. The second outcome is that data analysis allows to find easily detectable events in the majority of cases, and that it brings us the same results as the manual analysis. This system feature is therefore useful to the potential users because it allows to facilitate the general analysis process by easily finding key events of the experience.
+
+For what concerns ECG and EDA analysis, it confirms the idea that body reactions to events are clearly visible is we know when the event happens. This means that there is a correlation between them and that this correlation is easily analyzable using the framework.
 
 \section{Usability test}
+A usability test is a technique used in user-centered design to understand if a product is easy to use testing it on real users. It is usually conducted letting users complete some task and observing their performances. 
+This can include recording the test, measuring the time taken to complete the task, counting the errors made during the task, ask questions to the user, collect suggestions and measure any other kind of potentially useful parameter. Usability test are often conducted on prototypes of the system, so that with the results of the test developers can improve the prototype and meet users needs and suggestions. 
 
-\subsection{Protocol}
-Video tutorial shows how to run the Java application and the Unity scene, how to configure the sensors, how to start, stop and synchronize a recording session, how to switch to offline mode, how to open a previous recording, how to play it and how to add a marker to it. 
+In our case the system was tested with several methodologies, starting with letting the users perform tasks and measuring the time they take for completing each task. This part of the test was divided into two sections, one for the real-time mode and one for the offline mode. The latter was one of the most important parts of the whole validation phase because it could allow to determine if having the session synchronized is actually useful. In particular, the offline mode part of the usability test was divided in two tasks: the first one's goal was to find the moment when the event occurs by manually inspecting the three original non-synchronized sources (VR video, camera video and signals); the second one's goal instead was to find that moment using the framework offline mode (with a different recorded session). 
+By comparing the two tasks times we could determine whether the application can actually be helpful for finding easier and faster the key moments of the session.
+
+After these tasks, users were asked to answer general questions about system functionalities: this phase was useful for understanding if users could think of different approaches for synchronizing files or for analyzing data.
+The last step of the test was to let users fill a questionnaire about general usability of the system. The used questionnaire was the \textit{System Usability Scale} (SUS) \cite{brooke1996sus}, a scale developed by John Brooke in 1986 and become a standard in this type of tests. It gives a final score from 0 to 100 and the average value is 68, so any value above this number is considered good. The scale is reported in figure 5.5.
+
+\begin{figure}[p]
+\centering
+\includegraphics[scale=.92]{images/sus}
+\caption{System Usability Scale}
+\end{figure}
+
+\subsection{Test protocol}
+This section presents the detailed protocol used to perform the tests. The first requirement for this test was to use non-expert users, i.e. people that are not experts in data recording and analysis. The reason behind this choice was that the potential target users of this framework are represented by researchers that might not have any experience with this kind of functionalities. In this way we wanted to figure out if non-experts people could actually use the system. The first step of the test was therefore to collect participants' data such as age, sex, education/professional training and expertise in the system main functionalities. After that, a video tutorial was showed to the users in order to make them understand the basic functionalities of the system. It showed how to run the Java application and the Unity scene, how to configure the sensors, how to start, stop and synchronize a recording session, how to switch to offline mode, how to open a previous recording, how to play it and how to add a marker to it.
+
+After watching the video, participants were allowed to ask questions about anything they did not understand, then they started the test and had to complete the assigned tasks. The first one was to simply configure the sensors inside the application, start a recording and stop it after an event happens. The used scene was the dungeon one from the proof of concept; the event was the appearance of the monster, that occurred 10 seconds after the recording started. 
+
+The second phase was composed of two tasks. The first one was about finding the event in a previously recorded non-synchronized session looking inside the three files one by one. The second one's goal was the same as the other but using the application with a different recorded session. The two tasks were executed in a random order to be sure they did not influence users. After each task the user was asked about the data graphs, both inside the application and using a provided Excel plot of the data. The purpose of these questions was to understand if non-experts users were able to understand basic plots and to read data from them.
+
+The test was conducted on 15 people, 9 males and 6 females, aged between 19 and 38 (mean 26, SD 5.41); 13 of them were computer engineers or computer science students, 1 was a mechatronic engineer and 1 was an educational science student. The complete test protocol is the following:
 
 \begin{enumerate}
 
-\item Collect the participant's personal data: age, sex, education/professional training;
+\item collect the participant's personal data: age, sex, education/professional training;
 
 \item ask for expertise - on a scale of 1 to 5 (1 for no experience, 5 for expert) in the following topics:
 \begin{itemize}
 \item data analysis;
 \item physiological data recording;
 \item virtual reality system use and setup;
-\item programming.
+\item programming;
 \end{itemize}
 
 \item let the participant watch the video tutorial;
 
-\item participant can ask the examiner questions about things he did not understand from the tutorial;
-
-START PHASE 1
-
-\item 
-
-\item 
-
-\item 
-
-\item 
-
-\item 
-
+\item the participant can ask the examiner questions about things he did not understand from the tutorial;
 
 \end{enumerate}
 
 
+\subsubsection{Phase 1: Real-time mode}    
 
+\begin{enumerate}
+
+\item the participant is given the sensors connected in the following way:
+
+\begin{enumerate}
+\item ECG;
+\item Respiration;
+\item EDA;
+\item Temperature;
+\end{enumerate}
+
+\item \textit{Task 1.1}: 
+
+the participant has to run the Java application, correctly configure the signals and start a recording; time measurement starts when the application window is displayed and ends when the recording starts;
+
+\item \textit{Task 1.2}: 
+
+the participant has to run the Unity scene and start a new recording; time measurement starts when the scene is loaded and ends when the recording starts;
+
+\item \textit{Task 1.3}: 
+
+the participant has to wait for the event to happen, stop the recording from both the Java application and Unity, wait for the VR video being successfully created and stop the Unity scene; time measurement starts at the end of Task 1.2 and ends when the Unity scene is stopped;
+
+\end{enumerate}
+
+\subsubsection{Phase 2: Offline mode}    
+
+\begin{enumerate}
+
+\item the participant is given the Java application and two already recorded sessions of the proof of concept test (the dungeon with the monster), i.e. two folders with camera video, VR video and signals; only one of the sessions is already synchronized;
+
+\item examiner tosses a coin to determine if the participant has to first perform Task 2.1 or Task 2.2;
+
+\item \textit{Task 2.1}:
+
+the task goal is to open the folder from the Java application, replay the session and insert a marker (with any name) in the point where the monster appears; time measurement starts when the application window is displayed and ends when the user correctly inserts the marker;
+
+\begin{itemize}
+
+\item \textit{Question 2.1.1}: In the moment when the event happens, is the EMG value out of the range [-0.1, 0.1] mV? [Correct answer: \textit{Yes}]
+
+\item \textit{Question 2.1.2}: In the moment when the event happens, is the respiration value out of the range [-40\%, 40\%]? [Correct answer: \textit{No}]
+
+\end{itemize}
+
+\item \textit{Task 2.2}: 
+
+the task goal is to open the non-synchronized folder from the file explorer and find the moment where the monster appears in these 3 files (in this order): 
+\begin{enumerate}
+\item \textit{vrVideo\textunderscore TEMP.mp4}, pausing the video in that moment;
+\item \textit{cameraVideo\textunderscore TEMP.mp4}, pausing the video in that moment;
+\item \textit{signals.xlsx}, clicking on the graph point;
+\end{enumerate}
+
+time measurement starts when the participant opens the folder and ends when he correctly identifies the point on the graph;
+
+\begin{itemize}
+
+\item \textit{Question 2.2.1}: After a few seconds from the event, does the EDA reach the value 12? [Correct answer: \textit{No}]
+
+\item \textit{Question 2.2.2}: In the moment when the event happens, is the accelerometer Z axis out of the range [-0.2, 0.4]? [Correct answer: \textit{Yes}]
+
+\end{itemize}
+
+\item participant fills the \textit{System Usability Scale} questionnaire;
+
+\item participant is asked the following questions: 
+
+\begin{itemize}
+
+\item (Showing him the content of a signals txt file)
+Would you be able to plot a text file containing raw signals data like these? If yes, how? 
+
+\item How would you perform the research to find the point where the monster appears in the different files? Would you have a different technique than the "manual" one?
+
+\end{itemize}
+
+\end{enumerate}
 
 \subsection{Results}
+The first result to report is the expertise of the participants in the the asked fields. The average expertise in data analysis was 3.2, the one in physiological signals recording was 1.93, the one in VR setup and experience was 2.86 and the one in programming was 3.4. For what concerns the video tutorial, only one participant asked a question about the recording part. Starting from the first phase, there were no problems in starting a recording from the Java application and almost all the participants completed the first task very quickly (average time 22.49 seconds). The second task was even faster because they only had to start a recording from Unity; the average time taken to complete the task was 5.02 seconds. The third and last task of phase 1 was a little bit more complex and it included a 10 seconds waiting time for the monster appearance, so participants took some more time to reach the goal (29.39 seconds) compared to what they did in the previous test. 
 
-%\chapter{Conclusions}
-%\section{Future work ???}
+Regarding the offline mode phase, coin tosses resulted in only 4 heads out of 15 tosses, so task 2.1 was the first to be executed 4 times and task 2.2 11 times. Task 2.1 was not hard to complete, it just required to open a session, play it, find the event and mark it. Participants took an average of 72.6 seconds to reach the goal and then they answered the two questions. Since the questions were trivial, users were able to answer them correctly and very quickly, with an average time of 5.07 seconds for the first one and 3.68 seconds for the second one.
+Task 2.2 was instead more complex and finding the event in all the three sources was not easy. This is due to the fact that the files were not synchronized, so finding the event in one of them did not facilitate finding it in the other files. Although inspecting the VR video was trivial - the monster appearance was explicit and very visible - finding the event in the signals and camera video was not so simple. Signals were presented through a plot and the event moment was quite easy to identify, since the signals file was chosen such that when the event happened accelerometer axis and EMG had a clearly visible peak and EDA began to increase after a few seconds. Even with these considerations, some users took a while to find the event moment. Camera video analysis was the most difficult one because the subject of the chosen file did not respond to the event with a large reaction. This means that the event moment was not easy to find, since the reaction lasted just a few fractions of a second. The average time spent to complete the task was 117.8 seconds, 62.25\% more than the one of the previous task.
+As well as the previous ones, task 2.2 questions resulted easy and took the users just a few seconds to be answered, the average time was respectively 6.5 and 8.93 seconds.
+
+The \textit{System Usability Scale} questionnaire final result was the average of the participants results and was equal to 76. For each filled questionnaire, the final score was computed following three rules: 
+\begin{itemize}
+\item for all the odd numbered questions (the "positive" ones) subtract 1 from the value;
+\item for all the even numbered questions (the "negative" ones) subtract the value from 5;
+\item sum all the values and multiply the result by 2.5.
+\end{itemize}
+
+The last part of the test was composed of two general questions. The first one was about the plotting of data signals and almost all the participants had more than one idea in mind. The most proposed solution was {Microsoft Excel (12 out of 15 users), followed by Python (10 users), MATLAB (5 users) and R (1 user). One user had no ideas about how to plot the data. 
+Finally, the last question was about techniques to look for the event in the files without doing it manually. More than half of the users (8 out of 15) had no ideas on how to do it, 4 users proposed to analyze the sound and 3 proposed some machine learning technique; 2 participants suggested to analyze the video, 1 to use manual triggers and 1 to use visual markers. 
+
+\subsection{Discussion}
+Based on users background and expertise, we can say that they were quite expert in using software tools but not in recording physiological data. This aspect was good for the requirements of the system, that had to be usable by non-expert users. The first phase was successful and the participants were able to achieve the asked goals with no problems and in a short amount of time. This means that the framework is easy to use and that, after having explained with a tutorial how things work, people feel confident using it. 
+
+The most important result of the test was the one of the second phase because it showed and proved the real value of the system. Having a tool that synchronized the files is really helpful for the every kind of research involving more than one source, since it facilitates and speeds up the analysis process. In our test the result was that without the framework users took an average of 117.8 seconds to find the event in each file, while with the framework they took only 72.6 seconds: the system reduced by 38.37\% the time spent to locate the event. This is an important result that becomes even more important if we consider that our test sessions were very short (about 2 minutes each). If the session lasts longer the impact of the framework would presumably become bigger. This is due to the fact that finding an event in a long synchronized recorded session can be hard with respect to time, but it might become much harder if the files are not synchronized and the research has to be done manually. 
+
+For what concerns the SUS questionnaire, its average is 68 and the system resulted in a score equal to 76, a value way above the average. This means that even if the graphical interface of the application is not very catchy, users found the system usable and felt confident while performing the tasks. The first of the last two questions of the test showed that participants had a quite clear idea on how to plot data and therefore this feature of the system was not very innovative. The second one instead revealed that they did not know how to deal with non-synchronized files. The few proposed solutions were not easy to apply and would have required a more massive and time-consuming work (machine learning, sound analysis, etc). Furthermore, some of those solutions could not apply in a general scenario when for example there is no sound or no relevant event happens. The most valuable feature of the system is that it allows to have files synchronized in every kind of scenario; this leads to an easy and comfortable data analysis that would be way harder without the framework.
+
+
+
+
+
+
+
+
+
+\chapter{Conclusions}
+
 
 \backmatter
 \cleardoublepage

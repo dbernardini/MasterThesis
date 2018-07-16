@@ -1,0 +1,47 @@
+	% !TeX encoding = UTF-8
+% !TeX program = pdflatex
+\documentclass[binding=0.6cm,LaM]{sapthesis}
+\usepackage[utf8]{inputenx}
+\usepackage{lscape} 
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\usepackage{hyperref}
+\hypersetup{pdftitle={Thesis},pdfauthor={Danilo Bernardini}}
+\title{Design, development and evaluation of a \\framework for recording and synchronizing \\experiences in VR with physiological signals}
+\author{Danilo Bernardini}
+\IDnumber{1544247}
+\course[english]{Engineering in Computer Science}
+\courseorganizer{Faculty of Information Engineering, Informatics, and Statistics}
+\AcademicYear{2017/2018}
+
+\copyyear{2018}
+\advisor{Prof. Massimo Mecella}
+%\coadvisor{Prof. Maurizio Caon}
+\authoremail{danilo.bernardini93@gmail.com}
+\begin{document}
+\frontmatter
+\maketitle
+\end{document}
